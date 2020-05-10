@@ -1,0 +1,15 @@
+﻿<Window x:Class="MovieCRUD.Desktop.Views.Authentication.AuthenticationView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MovieCRUD.Desktop.Views.Authentication"
+        xmlns:ViewModels="clr-namespace:MovieCRUD.Desktop.ViewModels"
+        mc:Ignorable="d"
+        Title="Movie CRUD Authentication" Height="450" Width="800"
+        d:DataContext="{d:DesignInstance ViewModels:AuthenticationViewModel, d:IsDesignTimeCreatable=True}">
+    <Grid>
+        <TabControl Style="{StaticResource StyletConductorTabControl}" Height="419" VerticalAlignment="Top" Width="792">
+        </TabControl>
+    </Grid>
+</Window>

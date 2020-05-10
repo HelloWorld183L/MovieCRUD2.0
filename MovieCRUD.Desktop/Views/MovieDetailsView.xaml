@@ -1,0 +1,19 @@
+﻿<Window x:Class="MovieCRUD.Desktop.Views.MovieDetailsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MovieCRUD.Desktop.Views"
+        mc:Ignorable="d"
+        Title="Movie details" Height="206.462" Width="215.896">
+    <Grid>
+        <Label x:Name="movieIdLbl" Content="ID: " HorizontalAlignment="Left" Height="27" Margin="45,26,0,0" VerticalAlignment="Top" Width="24"/>
+        <TextBlock x:Name="movieIdTxt" HorizontalAlignment="Left" Margin="72,31,0,0" Text="{Binding Id}" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="movieNameLbl" Content="Name: " HorizontalAlignment="Left" Height="27" Margin="23,58,0,0" VerticalAlignment="Top" Width="46"/>
+        <TextBlock x:Name="movieNameTxt" HorizontalAlignment="Left" Margin="72,63,0,0" TextWrapping="Wrap" Text="{Binding Name}" VerticalAlignment="Top"/>
+        <Label x:Name="movieGenreLbl" Content="Genre: " HorizontalAlignment="Left" Height="27" Margin="23,90,0,0" VerticalAlignment="Top" Width="46"/>
+        <TextBlock x:Name="movieGenreTxt" HorizontalAlignment="Left" Margin="72,95,0,0" TextWrapping="Wrap" Text="{Binding Genre}" VerticalAlignment="Top"/>
+        <Label x:Name="movieRatingLbl" HorizontalAlignment="Left" Margin="19,122,0,0" Content="Rating: " VerticalAlignment="Top"/>
+        <TextBlock x:Name="movieRatingTxt" HorizontalAlignment="Left" Margin="69,127,0,0" Text="{Binding Rating}" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

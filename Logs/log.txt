@@ -1,0 +1,524 @@
+2020-04-27 18:13:27,789 [9] INFO defaultLogger - Sending HTTP GET request to api/Movie in order to get all movies
+2020-04-27 18:13:27,919 [9] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-27 18:13:27,920 [9] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-27 18:13:27,920 [9] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-27 18:13:27,920 [9] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-27 18:13:27,920 [9] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-27 18:13:27,920 [9] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-27 18:13:31,019 [9] INFO defaultLogger - Returning the create view
+2020-04-27 18:13:32,054 [12] INFO defaultLogger - Sending HTTP GET request to api/Movie in order to get all movies
+2020-04-27 18:13:32,054 [12] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-27 18:13:32,054 [12] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-27 18:13:32,054 [12] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-27 18:13:32,055 [12] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-27 18:13:32,055 [12] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-27 18:13:32,055 [12] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-27 18:13:34,724 [10] INFO defaultLogger - Sending HTTP GET request to api/Movie/1
+2020-04-27 18:13:34,724 [10] INFO defaultLogger - Mapping the movie response to the movie DTO...
+2020-04-27 18:13:34,724 [10] INFO defaultLogger - Returning the details view with movie ID 1
+2020-04-27 18:13:36,499 [12] INFO defaultLogger - Sending HTTP GET request to api/Movie in order to get all movies
+2020-04-27 18:13:36,499 [12] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-27 18:13:36,499 [12] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-27 18:13:36,499 [12] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-27 18:13:36,499 [12] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-27 18:13:36,499 [12] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-27 18:13:36,499 [12] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-27 18:13:37,903 [12] INFO defaultLogger - Sending HTTP GET request to api/Movie/12
+2020-04-27 18:13:37,903 [12] INFO defaultLogger - Mapping the movie response to the movie DTO...
+2020-04-27 18:13:37,903 [12] INFO defaultLogger - Returning the details view with movie ID 12
+2020-04-27 18:13:40,466 [11] INFO defaultLogger - Sending HTTP GET request to api/Movie in order to get all movies
+2020-04-27 18:13:40,466 [11] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-27 18:13:40,466 [11] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-27 18:13:40,466 [11] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-27 18:13:40,466 [11] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-27 18:13:40,466 [11] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-27 18:13:40,467 [11] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-27 18:13:41,013 [9] INFO defaultLogger - Returning the create view
+2020-04-27 18:13:41,639 [12] INFO defaultLogger - Sending HTTP GET request to api/Movie in order to get all movies
+2020-04-27 18:13:41,639 [12] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-27 18:13:41,639 [12] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-27 18:13:41,639 [12] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-27 18:13:41,639 [12] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-27 18:13:41,639 [12] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-27 18:13:41,639 [12] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-27 18:39:56,714 [6] INFO defaultLogger - Returning the create view
+2020-04-27 19:00:00,078 [10] INFO defaultLogger - Sending HTTP GET request to api/Movie in order to get all movies
+2020-04-27 19:00:00,205 [10] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-27 19:00:00,206 [10] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-27 19:00:00,206 [10] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-27 19:00:00,206 [10] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-27 19:00:00,206 [10] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-27 19:00:00,206 [10] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-27 19:00:02,473 [6] INFO defaultLogger - Returning the create view
+2020-04-27 19:00:03,661 [17] INFO defaultLogger - Sending HTTP GET request to api/Movie in order to get all movies
+2020-04-27 19:00:03,661 [17] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-27 19:00:03,661 [17] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-27 19:00:03,661 [17] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-27 19:00:03,661 [17] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-27 19:00:03,661 [17] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-27 19:00:03,662 [17] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-27 19:00:05,709 [18] INFO defaultLogger - Sending HTTP GET request to api/Movie/1
+2020-04-27 19:00:05,709 [18] INFO defaultLogger - Mapping the movie response to the movie DTO...
+2020-04-27 19:00:05,709 [18] INFO defaultLogger - Returning the details view with movie ID 1
+2020-04-27 19:00:07,431 [6] INFO defaultLogger - Sending HTTP GET request to api/Movie in order to get all movies
+2020-04-27 19:00:07,431 [6] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-27 19:00:07,431 [6] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-27 19:00:07,431 [6] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-27 19:00:07,431 [6] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-27 19:00:07,431 [6] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-27 19:00:07,431 [6] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-27 19:00:08,463 [18] INFO defaultLogger - Sending HTTP GET request to api/Movie/2
+2020-04-27 19:00:08,464 [18] INFO defaultLogger - Mapping the movie response to the movie DTO...
+2020-04-27 19:00:08,464 [18] INFO defaultLogger - Returning the details view with movie ID 2
+2020-04-27 19:00:09,587 [18] INFO defaultLogger - Sending HTTP GET request to api/Movie in order to get all movies
+2020-04-27 19:00:09,588 [18] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-27 19:00:09,588 [18] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-27 19:00:09,588 [18] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-27 19:00:09,588 [18] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-27 19:00:09,588 [18] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-27 19:00:09,588 [18] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-27 19:00:10,678 [18] INFO defaultLogger - Sending HTTP GET request to api/Movie/3
+2020-04-27 19:00:10,678 [18] INFO defaultLogger - Mapping the movie domain object to MovieDTO
+2020-04-27 19:00:10,678 [18] INFO defaultLogger - Returning the edit view with movie ID 3
+2020-04-27 19:00:12,749 [18] INFO defaultLogger - Sending HTTP GET request to api/Movie in order to get all movies
+2020-04-27 19:00:12,749 [18] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-27 19:00:12,749 [18] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-27 19:00:12,749 [18] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-27 19:00:12,749 [18] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-27 19:00:12,749 [18] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-27 19:00:12,749 [18] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-27 19:28:00,305 [5] INFO defaultLogger - Sending HTTP GET request to api/Movie in order to get all movies
+2020-04-27 19:28:00,442 [5] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-27 19:28:00,443 [5] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-27 19:28:00,443 [5] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-27 19:28:00,443 [5] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-27 19:28:00,443 [5] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-27 19:28:00,443 [5] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-27 19:28:06,523 [19] INFO defaultLogger - Returning the create view
+2020-04-27 19:28:12,680 [5] INFO defaultLogger - Sending HTTP GET request to api/Movie in order to get all movies
+2020-04-27 19:28:12,680 [5] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-27 19:28:12,680 [5] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-27 19:28:12,680 [5] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-27 19:28:12,680 [5] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-27 19:28:12,680 [5] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-27 19:28:12,680 [5] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-27 19:28:15,658 [7] INFO defaultLogger - Sending HTTP GET request to api/Movie in order to get all movies
+2020-04-27 19:28:15,659 [7] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-27 19:28:15,659 [7] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-27 19:28:15,659 [7] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-27 19:28:15,659 [7] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-27 19:28:15,659 [7] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-27 19:28:15,659 [7] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-27 19:28:16,208 [5] INFO defaultLogger - Returning the create view
+2020-04-27 19:56:16,948 [8] INFO defaultLogger - Sending HTTP GET request to api/Movie in order to get all movies
+2020-04-27 19:56:17,082 [8] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-27 19:56:17,082 [8] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-27 19:56:17,082 [8] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-27 19:56:17,082 [8] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-27 19:56:17,082 [8] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-27 19:56:17,082 [8] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-27 19:56:23,351 [10] INFO defaultLogger - Returning the create view
+2020-04-27 19:56:24,256 [13] INFO defaultLogger - Sending HTTP GET request to api/Movie in order to get all movies
+2020-04-27 19:56:24,256 [13] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-27 19:56:24,256 [13] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-27 19:56:24,256 [13] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-27 19:56:24,256 [13] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-27 19:56:24,256 [13] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-27 19:56:24,256 [13] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-27 19:56:27,994 [12] INFO defaultLogger - Sending HTTP GET request to api/Movie/1
+2020-04-27 19:56:27,995 [12] INFO defaultLogger - Mapping the movie domain object to MovieDTO
+2020-04-27 19:56:27,995 [12] INFO defaultLogger - Returning the edit view with movie ID 1
+ date  level  logger -  message  newline date  level  logger -  message  newline date  level  logger -  message  newline date  level  logger -  message  newline date  level  logger -  message  newline date  level  logger -  message  newline date  level  logger -  message  newline date  level  logger -  message  newline date  level  logger -  message  newline date  level  logger -  message  newline date  level  logger -  message  newline date  level  logger -  message  newline date  level  logger -  message  newline date  level  logger -  message  newline date  level  logger -  message  newline date  level  logger -  message  newline date  level  logger -  message  newline date  level  logger -  message  newline date  level  logger -  message  newline date  level  logger -  message  newline date  level  logger -  message  newline date  level  logger -  message  newline date  level  logger -  message  newline date  level  logger -  message  newline2020-04-27 20:04:43,311 [11] INFO defaultLogger - Mapped entities (Type: DbSet`1) to domain models (Type: List`1)
+2020-04-27 20:04:43,319 [11] INFO defaultLogger - Returning movie entities to be displayed
+2020-04-27 20:04:43,319 [11] INFO defaultLogger - Getting all movies from a movie repository
+2020-04-27 20:04:43,323 [11] INFO defaultLogger - Mapping movie responses to movie domain objects
+2020-04-27 20:04:49,775 [11] INFO defaultLogger - Mapped entities (Type: DbSet`1) to domain models (Type: List`1)
+2020-04-27 20:04:49,775 [11] INFO defaultLogger - Returning movie entities to be displayed
+2020-04-27 20:04:49,776 [11] INFO defaultLogger - Getting all movies from a movie repository
+2020-04-27 20:04:49,776 [11] INFO defaultLogger - Mapping movie responses to movie domain objects
+2020-04-27 20:06:38,978 [13] INFO defaultLogger - Mapped entities (Type: DbSet`1) to domain models (Type: List`1)
+2020-04-27 20:06:38,978 [13] INFO defaultLogger - Returning movie entities to be displayed
+2020-04-27 20:06:38,978 [13] INFO defaultLogger - Getting all movies from a movie repository
+2020-04-27 20:06:38,978 [13] INFO defaultLogger - Mapping movie responses to movie domain objects
+2020-04-27 22:31:37,481 [9] INFO defaultLogger - Mapping the CreateMovieRequest to a Movie domain object
+2020-04-27 22:31:37,493 [9] INFO defaultLogger - Mapped a domain model (Type: Movie) to a entity (Type: MovieEntity)
+2020-04-27 22:32:49,656 [9] INFO defaultLogger - Mapped entities (Type: DbSet`1) to domain models (Type: List`1)
+2020-04-27 22:32:49,656 [9] INFO defaultLogger - Returning movie entities to be displayed
+2020-04-27 22:32:50,094 [9] INFO defaultLogger - Getting all movies from a movie repository
+2020-04-27 22:32:50,637 [9] INFO defaultLogger - Mapping movie responses to movie domain objects
+2020-04-28 09:46:35,145 [9] INFO defaultLogger - Sending HTTP GET request to api/v1/Movie in order to get all movies
+2020-04-28 09:46:35,275 [9] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-28 09:46:35,275 [9] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-28 09:46:35,275 [9] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-28 09:46:35,275 [9] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-28 09:46:35,275 [9] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-28 09:46:35,275 [9] INFO defaultLogger - Mapping the movie response (ID: 13) to a movie DTO
+2020-04-28 09:46:35,275 [9] INFO defaultLogger - Mapping the movie response (ID: 14) to a movie DTO
+2020-04-28 09:46:35,275 [9] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-28 09:46:39,906 [9] INFO defaultLogger - Returning the create view
+2020-04-28 09:46:40,910 [12] INFO defaultLogger - Sending HTTP GET request to api/v1/Movie in order to get all movies
+2020-04-28 09:46:40,910 [12] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-28 09:46:40,910 [12] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-28 09:46:40,910 [12] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-28 09:46:40,910 [12] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-28 09:46:40,910 [12] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-28 09:46:40,910 [12] INFO defaultLogger - Mapping the movie response (ID: 13) to a movie DTO
+2020-04-28 09:46:40,910 [12] INFO defaultLogger - Mapping the movie response (ID: 14) to a movie DTO
+2020-04-28 09:46:40,910 [12] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-28 09:46:42,384 [10] INFO defaultLogger - Returning the create view
+2020-04-28 09:46:43,514 [12] INFO defaultLogger - Sending HTTP GET request to api/v1/Movie in order to get all movies
+2020-04-28 09:46:43,514 [12] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-28 09:46:43,514 [12] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-28 09:46:43,514 [12] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-28 09:46:43,514 [12] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-28 09:46:43,514 [12] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-28 09:46:43,514 [12] INFO defaultLogger - Mapping the movie response (ID: 13) to a movie DTO
+2020-04-28 09:46:43,514 [12] INFO defaultLogger - Mapping the movie response (ID: 14) to a movie DTO
+2020-04-28 09:46:43,515 [12] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-28 09:46:45,786 [12] INFO defaultLogger - Sending HTTP GET request to api/v1/Movie in order to get all movies
+2020-04-28 09:46:45,786 [12] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-28 09:46:45,786 [12] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-28 09:46:45,787 [12] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-28 09:46:45,787 [12] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-28 09:46:45,787 [12] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-28 09:46:45,787 [12] INFO defaultLogger - Mapping the movie response (ID: 13) to a movie DTO
+2020-04-28 09:46:45,787 [12] INFO defaultLogger - Mapping the movie response (ID: 14) to a movie DTO
+2020-04-28 09:46:45,787 [12] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-28 10:32:42,804 [10] INFO defaultLogger - Applied the pagination filter successfully
+2020-04-28 10:41:32,657 [6] INFO defaultLogger - Applied the pagination filter successfully
+2020-04-28 10:54:55,305 [12] INFO defaultLogger - Applied the pagination filter successfully
+2020-04-28 10:56:49,473 [10] INFO defaultLogger - Applied the pagination filter successfully
+2020-04-28 11:00:58,572 [10] INFO defaultLogger - Applied the pagination filter successfully
+2020-04-28 11:00:58,665 [10] INFO defaultLogger - Mapped entities (Type: DbQuery`1) to domain models (Type: List`1)
+2020-04-28 11:00:58,665 [10] INFO defaultLogger - Returning movie entities to be displayed
+2020-04-28 11:00:58,665 [10] INFO defaultLogger - Getting all movies from a movie repository
+2020-04-28 11:00:58,669 [10] INFO defaultLogger - Mapping movie responses to movie domain objects
+2020-04-28 11:01:14,989 [8] INFO defaultLogger - Applied the pagination filter successfully
+2020-04-28 11:01:14,992 [8] INFO defaultLogger - Mapped entities (Type: DbQuery`1) to domain models (Type: List`1)
+2020-04-28 11:01:14,992 [8] INFO defaultLogger - Returning movie entities to be displayed
+2020-04-28 11:01:14,992 [8] INFO defaultLogger - Getting all movies from a movie repository
+2020-04-28 11:01:14,992 [8] INFO defaultLogger - Mapping movie responses to movie domain objects
+2020-04-28 11:02:43,030 [8] INFO defaultLogger - Applied the pagination filter successfully
+2020-04-28 11:02:43,032 [8] INFO defaultLogger - Mapped entities (Type: DbQuery`1) to domain models (Type: List`1)
+2020-04-28 11:02:43,032 [8] INFO defaultLogger - Returning movie entities to be displayed
+2020-04-28 11:02:43,032 [8] INFO defaultLogger - Getting all movies from a movie repository
+2020-04-28 11:02:43,032 [8] INFO defaultLogger - Mapping movie responses to movie domain objects
+2020-04-28 11:02:50,902 [9] INFO defaultLogger - Applied the pagination filter successfully
+2020-04-28 11:02:50,907 [9] INFO defaultLogger - Mapped entities (Type: DbQuery`1) to domain models (Type: List`1)
+2020-04-28 11:02:50,907 [9] INFO defaultLogger - Returning movie entities to be displayed
+2020-04-28 11:02:50,907 [9] INFO defaultLogger - Getting all movies from a movie repository
+2020-04-28 11:02:50,907 [9] INFO defaultLogger - Mapping movie responses to movie domain objects
+2020-04-28 11:03:02,023 [8] INFO defaultLogger - Applied the pagination filter successfully
+2020-04-28 11:03:02,026 [8] INFO defaultLogger - Mapped entities (Type: DbQuery`1) to domain models (Type: List`1)
+2020-04-28 11:03:02,026 [8] INFO defaultLogger - Returning movie entities to be displayed
+2020-04-28 11:03:02,026 [8] INFO defaultLogger - Getting all movies from a movie repository
+2020-04-28 11:03:02,026 [8] INFO defaultLogger - Mapping movie responses to movie domain objects
+2020-04-28 11:16:26,661 [11] INFO defaultLogger - Added genre filter onto the pagedEntities
+2020-04-28 11:16:28,511 [11] INFO defaultLogger - Mapped entities (Type: DbSet`1) to domain models (Type: List`1)
+2020-04-28 11:16:28,511 [11] INFO defaultLogger - Returning movie entities to be displayed
+2020-04-28 11:16:28,511 [11] INFO defaultLogger - Getting all movies from a movie repository
+2020-04-28 11:16:28,515 [11] INFO defaultLogger - Mapping movie responses to movie domain objects
+2020-04-28 11:18:07,434 [10] INFO defaultLogger - Applied the pagination filter successfully
+2020-04-28 11:18:07,526 [10] INFO defaultLogger - Mapped entities (Type: DbQuery`1) to domain models (Type: List`1)
+2020-04-28 11:18:07,526 [10] INFO defaultLogger - Returning movie entities to be displayed
+2020-04-28 11:18:14,387 [10] INFO defaultLogger - Getting all movies from a movie repository
+2020-04-28 11:18:15,345 [10] INFO defaultLogger - Mapping movie responses to movie domain objects
+2020-04-28 17:12:04,976 [5] INFO defaultLogger - Sending HTTP GET request to api/v1/Movie in order to get all movies
+2020-04-28 17:12:05,121 [5] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-28 17:12:05,121 [5] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-28 17:12:05,122 [5] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-28 17:12:05,122 [5] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-28 17:12:05,122 [5] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-28 17:12:05,122 [5] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-28 17:12:34,339 [5] INFO defaultLogger - Returning the create view
+2020-04-28 17:15:21,612 [10] INFO defaultLogger - Applied the pagination filter successfully
+2020-04-28 17:15:21,709 [10] INFO defaultLogger - Mapped entities (Type: MovieEntity) to domain models (Type: List`1)
+2020-04-28 17:15:21,709 [10] INFO defaultLogger - Returning movie entities to be displayed
+2020-04-28 17:15:21,709 [10] INFO defaultLogger - Getting all movies from a movie repository
+2020-04-28 17:15:21,713 [10] INFO defaultLogger - Mapping movie responses to movie domain objects
+2020-04-28 17:23:39,080 [9] INFO defaultLogger - Sending HTTP GET request to api/v1/Movie in order to get all movies
+2020-04-28 17:23:39,253 [9] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-28 17:23:39,254 [9] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-28 17:23:39,254 [9] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-28 17:23:39,254 [9] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-28 17:23:39,254 [9] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-28 17:23:39,254 [9] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-28 17:26:05,428 [11] INFO defaultLogger - Applied the pagination filter successfully
+2020-04-28 17:26:05,552 [11] INFO defaultLogger - Mapped entities (Type: MovieEntity) to domain models (Type: List`1)
+2020-04-28 17:26:05,552 [11] INFO defaultLogger - Returning movie entities to be displayed
+2020-04-28 17:26:05,552 [11] INFO defaultLogger - Getting all movies from a movie repository
+2020-04-28 17:26:05,557 [11] INFO defaultLogger - Mapping movie responses to movie domain objects
+2020-04-28 17:28:30,386 [9] INFO defaultLogger - Applied the pagination filter successfully
+2020-04-28 17:28:30,491 [9] INFO defaultLogger - Mapped entities (Type: MovieEntity) to domain models (Type: List`1)
+2020-04-28 17:28:30,491 [9] INFO defaultLogger - Returning movie entities to be displayed
+2020-04-28 17:28:30,491 [9] INFO defaultLogger - Getting all movies from a movie repository
+2020-04-28 17:28:30,495 [9] INFO defaultLogger - Mapping movie responses to movie domain objects
+2020-04-28 17:29:50,355 [12] INFO defaultLogger - Applied the pagination filter successfully
+2020-04-28 17:29:50,481 [12] INFO defaultLogger - Mapped entities (Type: MovieEntity) to domain models (Type: List`1)
+2020-04-28 17:29:50,481 [12] INFO defaultLogger - Returning movie entities to be displayed
+2020-04-28 17:29:50,481 [12] INFO defaultLogger - Getting all movies from a movie repository
+2020-04-28 17:29:50,486 [12] INFO defaultLogger - Mapping movie responses to movie domain objects
+2020-04-28 17:35:07,458 [11] INFO defaultLogger - Applied the pagination filter successfully
+2020-04-28 17:35:07,562 [11] INFO defaultLogger - Mapped entities (Type: MovieEntity) to domain models (Type: List`1)
+2020-04-28 17:35:07,562 [11] INFO defaultLogger - Returning movie entities to be displayed
+2020-04-28 17:35:07,562 [11] INFO defaultLogger - Getting all movies from a movie repository
+2020-04-28 17:35:07,568 [11] INFO defaultLogger - Mapping movie responses to movie domain objects
+2020-04-28 17:37:48,105 [13] INFO defaultLogger - Sending HTTP GET request to api/v1/Movie in order to get all movies
+2020-04-28 17:37:48,245 [13] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-28 17:37:48,245 [13] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-28 17:37:48,245 [13] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-28 17:37:48,245 [13] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-28 17:37:48,245 [13] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-28 17:37:48,245 [13] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-28 17:38:19,885 [22] INFO defaultLogger - Sending HTTP GET request to api/v1/Movie/{movieId}/1
+2020-04-28 17:38:24,286 [22] INFO defaultLogger - Mapping the movie response to the movie DTO...
+2020-04-28 17:38:24,707 [22] INFO defaultLogger - Returning the details view with movie ID 1
+2020-04-28 17:38:55,587 [11] INFO defaultLogger - Sending HTTP GET request to api/v1/Movie in order to get all movies
+2020-04-28 17:38:55,587 [11] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-28 17:38:55,587 [11] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-28 17:38:55,587 [11] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-28 17:38:55,587 [11] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-28 17:38:55,587 [11] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-28 17:38:55,587 [11] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-28 17:41:16,504 [8] INFO defaultLogger - Applied the pagination filter successfully
+2020-04-28 17:41:16,606 [8] INFO defaultLogger - Mapped entities (Type: MovieEntity) to domain models (Type: List`1)
+2020-04-28 17:41:16,606 [8] INFO defaultLogger - Returning movie entities to be displayed
+2020-04-28 17:41:16,606 [8] INFO defaultLogger - Getting all movies from a movie repository
+2020-04-28 17:41:16,611 [8] INFO defaultLogger - Mapping movie responses to movie domain objects
+2020-04-28 17:41:48,185 [8] INFO defaultLogger - Retrieved an entity (Type: MovieEntity) from the entity set
+2020-04-28 17:41:48,185 [8] INFO defaultLogger - Added an entity (Type: MovieEntity) to the entity cache
+2020-04-28 17:41:48,185 [8] INFO defaultLogger - Found an entity (Type: MovieEntity) with an ID: 4
+2020-04-28 17:41:48,186 [8] INFO defaultLogger - Mapped an entity (Type: MovieEntity) to a domain model (Type: Movie)
+2020-04-28 17:41:48,188 [8] INFO defaultLogger - Mapping Movie domain object to MovieResponse
+2020-04-28 17:41:53,540 [10] INFO defaultLogger - Mapping the EditMovieRequest to a Movie domain object
+2020-04-28 17:41:53,543 [10] INFO defaultLogger - Mapped a domain model (Type: Movie) to a entity (Type: MovieEntity)
+2020-04-28 17:41:53,772 [9] INFO defaultLogger - Applied the pagination filter successfully
+2020-04-28 17:41:53,775 [9] INFO defaultLogger - Mapped entities (Type: MovieEntity) to domain models (Type: List`1)
+2020-04-28 17:41:53,775 [9] INFO defaultLogger - Returning movie entities to be displayed
+2020-04-28 17:41:53,775 [9] INFO defaultLogger - Getting all movies from a movie repository
+2020-04-28 17:41:53,775 [9] INFO defaultLogger - Mapping movie responses to movie domain objects
+2020-04-28 17:42:04,768 [8] INFO defaultLogger - Applied the pagination filter successfully
+2020-04-28 17:42:04,768 [8] INFO defaultLogger - Added genre filter onto the pagedEntities
+2020-04-28 17:45:14,554 [10] INFO defaultLogger - Applied the pagination filter successfully
+2020-04-28 17:45:14,563 [10] INFO defaultLogger - Added genre filter onto the pagedEntities
+2020-04-28 17:45:14,652 [10] INFO defaultLogger - Mapped entities (Type: WhereEnumerableIterator`1) to domain models (Type: List`1)
+2020-04-28 17:45:14,652 [10] INFO defaultLogger - Returning movie entities to be displayed
+2020-04-28 17:45:14,652 [10] INFO defaultLogger - Getting all movies from a movie repository
+2020-04-28 17:45:14,657 [10] INFO defaultLogger - Mapping movie responses to movie domain objects
+2020-04-28 17:46:39,475 [9] INFO defaultLogger - Applied the pagination filter successfully
+2020-04-28 17:46:39,475 [9] INFO defaultLogger - Added genre filter onto the pagedEntities
+2020-04-28 17:46:39,478 [9] INFO defaultLogger - Mapped entities (Type: WhereEnumerableIterator`1) to domain models (Type: List`1)
+2020-04-28 17:46:39,478 [9] INFO defaultLogger - Returning movie entities to be displayed
+2020-04-28 17:46:47,054 [9] INFO defaultLogger - Getting all movies from a movie repository
+2020-04-28 17:46:48,746 [9] INFO defaultLogger - Mapping movie responses to movie domain objects
+2020-04-28 17:50:18,372 [9] INFO defaultLogger - Applied the pagination filter successfully
+2020-04-28 17:50:44,428 [9] INFO defaultLogger - Added genre filter onto the pagedEntities
+2020-04-28 17:53:08,493 [11] INFO defaultLogger - Applied the pagination filter successfully
+2020-04-28 17:53:08,628 [11] INFO defaultLogger - Added genre filter onto the pagedEntities
+2020-04-28 17:53:08,708 [11] INFO defaultLogger - Mapped entities (Type: WhereEnumerableIterator`1) to domain models (Type: List`1)
+2020-04-28 17:53:08,708 [11] INFO defaultLogger - Returning movie entities to be displayed
+2020-04-28 17:53:08,708 [11] INFO defaultLogger - Getting all movies from a movie repository
+2020-04-28 17:53:08,713 [11] INFO defaultLogger - Mapping movie responses to movie domain objects
+2020-04-28 17:58:38,491 [11] INFO defaultLogger - Sending HTTP GET request to api/v1/Movie in order to get all movies
+2020-04-28 17:58:38,625 [11] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-28 17:58:38,625 [11] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-28 17:58:38,626 [11] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-28 17:58:38,626 [11] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-28 17:58:38,626 [11] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-28 17:58:38,626 [11] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-28 18:00:58,186 [11] INFO defaultLogger - Sending HTTP GET request to api/v1/Movie in order to get all movies
+2020-04-28 18:00:58,186 [11] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-28 18:00:58,186 [11] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-28 18:00:58,186 [11] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-28 18:00:58,186 [11] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-28 18:00:58,186 [11] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-28 18:00:58,187 [11] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-28 18:23:47,254 [12] INFO defaultLogger - Applied the pagination filter successfully
+2020-04-28 18:23:47,270 [12] INFO defaultLogger - Added genre filter onto the pagedEntities
+2020-04-28 18:23:47,371 [12] INFO defaultLogger - Mapped entities (Type: DbQuery`1) to domain models (Type: List`1)
+2020-04-28 18:23:47,371 [12] INFO defaultLogger - Returning movie entities to be displayed
+2020-04-28 18:23:47,371 [12] INFO defaultLogger - Getting all movies from a movie repository
+2020-04-28 18:23:47,375 [12] INFO defaultLogger - Mapping movie responses to movie domain objects
+2020-04-28 18:23:54,729 [11] INFO defaultLogger - Applied the pagination filter successfully
+2020-04-28 18:23:54,729 [11] INFO defaultLogger - Added genre filter onto the pagedEntities
+2020-04-28 18:23:54,759 [11] INFO defaultLogger - Mapped entities (Type: DbQuery`1) to domain models (Type: List`1)
+2020-04-28 18:23:54,759 [11] INFO defaultLogger - Returning movie entities to be displayed
+2020-04-28 18:23:54,759 [11] INFO defaultLogger - Getting all movies from a movie repository
+2020-04-28 18:23:54,759 [11] INFO defaultLogger - Mapping movie responses to movie domain objects
+2020-04-28 18:26:36,197 [15] INFO defaultLogger - Applied the pagination filter successfully
+2020-04-28 18:34:42,443 [6] INFO defaultLogger - Applied the pagination filter successfully
+2020-04-28 18:35:24,770 [6] INFO defaultLogger - Added genre filter onto the pagedEntities
+2020-04-28 18:35:24,851 [6] INFO defaultLogger - Mapped entities (Type: WhereEnumerableIterator`1) to domain models (Type: List`1)
+2020-04-28 18:35:24,851 [6] INFO defaultLogger - Returning movie entities to be displayed
+2020-04-28 18:35:24,851 [6] INFO defaultLogger - Getting all movies from a movie repository
+2020-04-28 18:35:24,854 [6] INFO defaultLogger - Mapping movie responses to movie domain objects
+2020-04-28 21:51:06,461 [6] INFO defaultLogger - Sending HTTP GET request to api/v1/Movie in order to get all movies
+2020-04-28 21:51:06,586 [6] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-28 21:51:06,587 [6] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-28 21:51:06,587 [6] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-28 21:51:06,587 [6] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-28 21:51:06,587 [6] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-28 21:51:06,587 [6] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-28 21:53:45,194 [6] INFO defaultLogger - Sending HTTP GET request to api/v1/Movie/{movieId}/4
+2020-04-28 21:53:45,194 [6] INFO defaultLogger - Mapping the movie domain object to MovieDTO
+2020-04-28 21:53:45,194 [6] INFO defaultLogger - Returning the edit view with movie ID 4
+2020-04-28 21:53:49,967 [6] INFO defaultLogger - Mapping the MovieDTO to EditMovieRequest
+2020-04-28 21:53:49,997 [6] INFO defaultLogger - Serializing EditMovieRequest into JSON
+2020-04-28 21:53:50,220 [23] INFO defaultLogger - Sending HTTP PUT request to api/v1/Movie to edit the movie with an id of 4
+2020-04-28 21:53:56,675 [6] INFO defaultLogger - Sending HTTP GET request to api/v1/Movie in order to get all movies
+2020-04-28 21:53:56,675 [6] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-28 21:53:56,675 [6] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-28 21:53:56,675 [6] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-28 21:53:56,676 [6] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-28 21:53:56,676 [6] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-28 21:53:56,676 [6] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-28 21:54:03,048 [23] INFO defaultLogger - Sending HTTP GET request to api/v1/Movie/{movieId}/12
+2020-04-28 21:54:03,048 [23] INFO defaultLogger - Mapping the movie domain object to MovieDTO
+2020-04-28 21:54:03,048 [23] INFO defaultLogger - Returning the edit view with movie ID 12
+2020-04-28 21:54:07,160 [7] INFO defaultLogger - Mapping the MovieDTO to EditMovieRequest
+2020-04-28 21:54:07,161 [7] INFO defaultLogger - Serializing EditMovieRequest into JSON
+2020-04-28 21:54:07,173 [23] INFO defaultLogger - Sending HTTP PUT request to api/v1/Movie to edit the movie with an id of 12
+2020-04-28 21:54:09,036 [23] INFO defaultLogger - Sending HTTP GET request to api/v1/Movie in order to get all movies
+2020-04-28 21:54:09,036 [23] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-28 21:54:09,036 [23] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-28 21:54:09,036 [23] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-28 21:54:09,036 [23] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-28 21:54:09,036 [23] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-28 21:54:09,037 [23] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-28 21:54:13,323 [23] INFO defaultLogger - Sending HTTP GET request to api/v1/Movie/{movieId}/2
+2020-04-28 21:54:13,323 [23] INFO defaultLogger - Mapping the movie domain object to MovieDTO
+2020-04-28 21:54:13,323 [23] INFO defaultLogger - Returning the edit view with movie ID 2
+2020-04-28 21:54:18,039 [6] INFO defaultLogger - Mapping the MovieDTO to EditMovieRequest
+2020-04-28 21:54:18,039 [6] INFO defaultLogger - Serializing EditMovieRequest into JSON
+2020-04-28 21:54:18,048 [23] INFO defaultLogger - Sending HTTP PUT request to api/v1/Movie to edit the movie with an id of 2
+2020-04-28 21:54:24,164 [6] INFO defaultLogger - Sending HTTP GET request to api/v1/Movie in order to get all movies
+2020-04-28 21:54:24,164 [6] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-28 21:54:24,164 [6] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-28 21:54:24,164 [6] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-28 21:54:24,164 [6] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-28 21:54:24,164 [6] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-28 21:54:24,164 [6] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-28 21:58:45,686 [8] INFO defaultLogger - Sending HTTP GET request to api/v1/Movie/{movieId}/4
+2020-04-28 21:58:45,686 [8] INFO defaultLogger - Mapping the movie domain object to MovieDTO
+2020-04-28 21:58:45,686 [8] INFO defaultLogger - Returning the edit view with movie ID 4
+2020-04-28 21:58:49,966 [8] INFO defaultLogger - Mapping the MovieDTO to EditMovieRequest
+2020-04-28 21:58:49,966 [8] INFO defaultLogger - Serializing EditMovieRequest into JSON
+2020-04-28 21:58:49,975 [34] INFO defaultLogger - Sending HTTP PUT request to api/v1/Movie to edit the movie with an id of 4
+2020-04-28 21:58:49,991 [34] INFO defaultLogger - Sending HTTP GET request to api/v1/Movie in order to get all movies
+2020-04-28 21:58:49,991 [34] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-28 21:58:49,991 [34] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-28 21:58:49,991 [34] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-28 21:58:49,991 [34] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-28 21:58:49,991 [34] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-28 21:58:49,991 [34] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-28 21:58:54,000 [36] INFO defaultLogger - Sending HTTP GET request to api/v1/Movie/{movieId}/2
+2020-04-28 21:58:54,000 [36] INFO defaultLogger - Mapping the movie domain object to MovieDTO
+2020-04-28 21:58:54,001 [36] INFO defaultLogger - Returning the edit view with movie ID 2
+2020-04-28 21:58:57,974 [8] INFO defaultLogger - Mapping the MovieDTO to EditMovieRequest
+2020-04-28 21:58:57,974 [8] INFO defaultLogger - Serializing EditMovieRequest into JSON
+2020-04-28 21:58:57,983 [34] INFO defaultLogger - Sending HTTP PUT request to api/v1/Movie to edit the movie with an id of 2
+2020-04-28 21:58:58,000 [36] INFO defaultLogger - Sending HTTP GET request to api/v1/Movie in order to get all movies
+2020-04-28 21:58:58,000 [36] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-28 21:58:58,000 [36] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-28 21:58:58,000 [36] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-28 21:58:58,000 [36] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-28 21:58:58,000 [36] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-28 21:58:58,000 [36] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-28 21:59:00,416 [34] INFO defaultLogger - Sending HTTP GET request to api/v1/Movie/{movieId}/12
+2020-04-28 21:59:00,416 [34] INFO defaultLogger - Mapping the movie domain object to MovieDTO
+2020-04-28 21:59:00,416 [34] INFO defaultLogger - Returning the edit view with movie ID 12
+2020-04-28 21:59:04,420 [8] INFO defaultLogger - Mapping the MovieDTO to EditMovieRequest
+2020-04-28 21:59:04,420 [8] INFO defaultLogger - Serializing EditMovieRequest into JSON
+2020-04-28 21:59:04,432 [34] INFO defaultLogger - Sending HTTP PUT request to api/v1/Movie to edit the movie with an id of 12
+2020-04-28 21:59:04,448 [34] INFO defaultLogger - Sending HTTP GET request to api/v1/Movie in order to get all movies
+2020-04-28 21:59:04,448 [34] INFO defaultLogger - Mapping the movie response (ID: 1) to a movie DTO
+2020-04-28 21:59:04,448 [34] INFO defaultLogger - Mapping the movie response (ID: 2) to a movie DTO
+2020-04-28 21:59:04,448 [34] INFO defaultLogger - Mapping the movie response (ID: 3) to a movie DTO
+2020-04-28 21:59:04,448 [34] INFO defaultLogger - Mapping the movie response (ID: 4) to a movie DTO
+2020-04-28 21:59:04,448 [34] INFO defaultLogger - Mapping the movie response (ID: 12) to a movie DTO
+2020-04-28 21:59:04,448 [34] INFO defaultLogger - Returning the list view with the list of movie DTOs
+2020-04-30 17:56:53,367 [NonParallelWorker] INFO defaultLogger - Returning the create view
+2020-04-30 18:00:14,388 [NonParallelWorker] INFO defaultLogger - Returning the create view
+2020-04-30 18:50:11,169 [NonParallelWorker] INFO defaultLogger - Returning the create view
+2020-04-30 18:54:16,113 [NonParallelWorker] INFO defaultLogger - Mapping the MovieDTO to a CreateMovieRequest
+2020-04-30 18:54:16,232 [NonParallelWorker] INFO defaultLogger - Serializing CreateMovieRequest into JSON
+2020-04-30 18:54:20,390 [NonParallelWorker] INFO defaultLogger - Mapping the MovieDTO to a CreateMovieRequest
+2020-04-30 18:54:20,391 [NonParallelWorker] INFO defaultLogger - Serializing CreateMovieRequest into JSON
+2020-04-30 18:54:24,406 [NonParallelWorker] INFO defaultLogger - Returning the create view
+2020-04-30 18:54:48,513 [NonParallelWorker] INFO defaultLogger - Serializing EditMovieRequest into JSON
+2020-04-30 18:54:52,538 [NonParallelWorker] INFO defaultLogger - Serializing EditMovieRequest into JSON
+2020-04-30 19:07:37,457 [NonParallelWorker] INFO defaultLogger - Mapping the MovieDTO to a CreateMovieRequest
+2020-04-30 19:07:37,596 [NonParallelWorker] INFO defaultLogger - Serializing CreateMovieRequest into JSON
+2020-04-30 19:07:41,769 [NonParallelWorker] INFO defaultLogger - Mapping the MovieDTO to a CreateMovieRequest
+2020-04-30 19:07:41,769 [NonParallelWorker] INFO defaultLogger - Serializing CreateMovieRequest into JSON
+2020-04-30 19:07:45,788 [NonParallelWorker] INFO defaultLogger - Returning the create view
+2020-04-30 19:08:09,874 [NonParallelWorker] INFO defaultLogger - Serializing EditMovieRequest into JSON
+2020-04-30 19:08:13,887 [NonParallelWorker] INFO defaultLogger - Serializing EditMovieRequest into JSON
+2020-04-30 19:09:56,066 [NonParallelWorker] INFO defaultLogger - Mapping the MovieDTO to a CreateMovieRequest
+2020-04-30 19:09:56,186 [NonParallelWorker] INFO defaultLogger - Serializing CreateMovieRequest into JSON
+2020-04-30 19:10:00,350 [NonParallelWorker] INFO defaultLogger - Mapping the MovieDTO to a CreateMovieRequest
+2020-04-30 19:10:00,351 [NonParallelWorker] INFO defaultLogger - Serializing CreateMovieRequest into JSON
+2020-04-30 19:10:04,364 [NonParallelWorker] INFO defaultLogger - Returning the create view
+2020-04-30 19:10:28,493 [NonParallelWorker] INFO defaultLogger - Serializing EditMovieRequest into JSON
+2020-04-30 19:10:32,515 [NonParallelWorker] INFO defaultLogger - Serializing EditMovieRequest into JSON
+2020-04-30 19:38:34,643 [NonParallelWorker] INFO defaultLogger - Mapping the MovieDTO to a CreateMovieRequest
+2020-04-30 19:38:34,775 [NonParallelWorker] INFO defaultLogger - Serializing CreateMovieRequest into JSON
+2020-04-30 19:38:38,959 [NonParallelWorker] INFO defaultLogger - Mapping the MovieDTO to a CreateMovieRequest
+2020-04-30 19:38:38,960 [NonParallelWorker] INFO defaultLogger - Serializing CreateMovieRequest into JSON
+2020-04-30 19:38:42,974 [NonParallelWorker] INFO defaultLogger - Returning the create view
+2020-04-30 19:39:07,265 [NonParallelWorker] INFO defaultLogger - Serializing EditMovieRequest into JSON
+2020-04-30 19:39:11,280 [NonParallelWorker] INFO defaultLogger - Serializing EditMovieRequest into JSON
+2020-04-30 21:00:15,128 [NonParallelWorker] INFO defaultLogger - Mapping the MovieDTO to a CreateMovieRequest
+2020-04-30 21:00:15,271 [NonParallelWorker] INFO defaultLogger - Serializing CreateMovieRequest into JSON
+2020-04-30 21:00:19,448 [NonParallelWorker] INFO defaultLogger - Mapping the MovieDTO to a CreateMovieRequest
+2020-04-30 21:00:19,448 [NonParallelWorker] INFO defaultLogger - Serializing CreateMovieRequest into JSON
+2020-04-30 21:00:23,460 [NonParallelWorker] INFO defaultLogger - Returning the create view
+2020-04-30 21:00:47,566 [NonParallelWorker] INFO defaultLogger - Serializing EditMovieRequest into JSON
+2020-04-30 21:00:51,583 [NonParallelWorker] INFO defaultLogger - Serializing EditMovieRequest into JSON
+2020-04-30 21:24:11,061 [NonParallelWorker] INFO defaultLogger - Mapping the MovieDTO to a CreateMovieRequest
+2020-04-30 21:24:11,177 [NonParallelWorker] INFO defaultLogger - Serializing CreateMovieRequest into JSON
+2020-04-30 21:24:15,337 [NonParallelWorker] INFO defaultLogger - Mapping the MovieDTO to a CreateMovieRequest
+2020-04-30 21:24:15,339 [NonParallelWorker] INFO defaultLogger - Serializing CreateMovieRequest into JSON
+2020-04-30 21:24:19,355 [NonParallelWorker] INFO defaultLogger - Returning the create view
+2020-04-30 21:24:43,473 [NonParallelWorker] INFO defaultLogger - Serializing EditMovieRequest into JSON
+2020-04-30 21:24:47,496 [NonParallelWorker] INFO defaultLogger - Serializing EditMovieRequest into JSON
+2020-04-30 22:16:03,755 [NonParallelWorker] INFO defaultLogger - Mapping the MovieDTO to a CreateMovieRequest
+2020-04-30 22:16:03,881 [NonParallelWorker] INFO defaultLogger - Serializing CreateMovieRequest into JSON
+2020-04-30 22:16:08,037 [NonParallelWorker] INFO defaultLogger - Mapping the MovieDTO to a CreateMovieRequest
+2020-04-30 22:16:08,040 [NonParallelWorker] INFO defaultLogger - Serializing CreateMovieRequest into JSON
+2020-04-30 22:16:12,059 [NonParallelWorker] INFO defaultLogger - Returning the create view
+2020-04-30 22:16:36,174 [NonParallelWorker] INFO defaultLogger - Serializing EditMovieRequest into JSON
+2020-04-30 22:16:40,198 [NonParallelWorker] INFO defaultLogger - Serializing EditMovieRequest into JSON
+2020-05-01 17:03:52,627 [NonParallelWorker] INFO defaultLogger - Mapping the MovieDTO to a CreateMovieRequest
+2020-05-01 17:03:52,760 [NonParallelWorker] INFO defaultLogger - Serializing CreateMovieRequest into JSON
+2020-05-01 17:03:56,939 [NonParallelWorker] INFO defaultLogger - Mapping the MovieDTO to a CreateMovieRequest
+2020-05-01 17:03:56,940 [NonParallelWorker] INFO defaultLogger - Serializing CreateMovieRequest into JSON
+2020-05-01 17:04:00,967 [NonParallelWorker] INFO defaultLogger - Returning the create view
+2020-05-01 17:17:29,673 [NonParallelWorker] INFO defaultLogger - Mapping the MovieDTO to a CreateMovieRequest
+2020-05-01 17:17:29,789 [NonParallelWorker] INFO defaultLogger - Serializing CreateMovieRequest into JSON
+2020-05-01 17:17:33,976 [NonParallelWorker] INFO defaultLogger - Mapping the MovieDTO to a CreateMovieRequest
+2020-05-01 17:17:33,976 [NonParallelWorker] INFO defaultLogger - Serializing CreateMovieRequest into JSON
+2020-05-01 17:17:37,990 [NonParallelWorker] INFO defaultLogger - Returning the create view
+2020-05-01 17:58:00,431 [NonParallelWorker] INFO defaultLogger - Mapping the MovieDTO to a CreateMovieRequest
+2020-05-01 17:58:00,566 [NonParallelWorker] INFO defaultLogger - Serializing CreateMovieRequest into JSON
+2020-05-01 17:58:04,747 [NonParallelWorker] INFO defaultLogger - Mapping the MovieDTO to a CreateMovieRequest
+2020-05-01 17:58:04,748 [NonParallelWorker] INFO defaultLogger - Serializing CreateMovieRequest into JSON
+2020-05-01 17:58:08,763 [NonParallelWorker] INFO defaultLogger - Returning the create view
+2020-05-03 22:09:09,110 [6] INFO defaultLogger - Applied the pagination filter successfully
+2020-05-03 22:09:09,121 [6] INFO defaultLogger - Added genre filter onto the pagedEntities
+2020-05-03 22:09:09,209 [6] INFO defaultLogger - Mapped entities (Type: DbQuery`1) to domain models (Type: List`1)
+2020-05-03 22:09:09,209 [6] INFO defaultLogger - Returning movie entities to be displayed
+2020-05-03 22:09:09,209 [6] INFO defaultLogger - Getting all movies from a movie repository
+2020-05-03 22:09:09,215 [6] INFO defaultLogger - Mapping movie responses to movie domain objects
+2020-05-03 22:09:15,915 [8] INFO defaultLogger - Applied the pagination filter successfully
+2020-05-03 22:09:15,915 [8] INFO defaultLogger - Added genre filter onto the pagedEntities
+2020-05-03 22:09:15,916 [8] INFO defaultLogger - Mapped entities (Type: DbQuery`1) to domain models (Type: List`1)
+2020-05-03 22:09:15,916 [8] INFO defaultLogger - Returning movie entities to be displayed
+2020-05-03 22:09:15,916 [8] INFO defaultLogger - Getting all movies from a movie repository
+2020-05-03 22:09:15,916 [8] INFO defaultLogger - Mapping movie responses to movie domain objects
+2020-05-03 22:17:39,048 [6] INFO defaultLogger - Applied the pagination filter successfully
+2020-05-03 22:17:39,058 [6] INFO defaultLogger - Added genre filter onto the pagedEntities
+2020-05-03 22:17:39,173 [6] INFO defaultLogger - Mapped entities (Type: DbQuery`1) to domain models (Type: List`1)
+2020-05-03 22:17:39,174 [6] INFO defaultLogger - Returning movie entities to be displayed
+2020-05-03 22:17:39,174 [6] INFO defaultLogger - Getting all movies from a movie repository
+2020-05-03 22:17:39,181 [6] INFO defaultLogger - Mapping movie responses to movie domain objects
