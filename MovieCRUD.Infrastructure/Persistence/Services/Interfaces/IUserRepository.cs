@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using MovieCRUD.Domain.DomainObjects;
+using MovieCRUD.Domain.Authentication;
 using MovieCRUD.Infrastructure.Interfaces;
 using MovieCRUD.Infrastructure.Notifications.Services;
 using MovieCRUD.Infrastructure.Notifications.Services.Interfaces;

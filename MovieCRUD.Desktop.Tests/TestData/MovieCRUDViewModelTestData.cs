@@ -1,4 +1,5 @@
-﻿using MovieCRUD.Contracts.V1.Responses;
+﻿using MovieCRUD.Movies.Responses;
+using MovieCRUD.SharedKernel;
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ namespace MovieCRUD.Desktop.Tests.TestData
                         Id = 1,
                         Name = "Harry Potter: The Philosopher's Stone",
                         Genre = "Mystery",
-                        Rating = Api.Rating.Good
+                        Rating = Rating.Good
                     },
 
                     new MovieResponse()
@@ -27,7 +28,7 @@ namespace MovieCRUD.Desktop.Tests.TestData
                         Id = 2,
                         Name = "Harry Potter: Deathly Hallows",
                         Genre = "Mystery/Action",
-                        Rating = Api.Rating.Good
+                        Rating = Rating.Good
                     }
                 };
                 yield return new TestCaseData(movieResponses.AsEnumerable());

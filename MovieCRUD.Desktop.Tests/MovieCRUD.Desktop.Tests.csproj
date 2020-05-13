@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MovieCRUD.Desktop\MovieCRUD.Desktop.csproj" />
+    <ProjectReference Include="..\MovieCRUD.Infrastructure.Logging\MovieCRUD.Infrastructure.Logging.csproj" />
   </ItemGroup>
 
 </Project>

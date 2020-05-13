@@ -77,12 +77,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MovieCRUD.Domain\MovieCRUD.Domain.csproj">
-      <Project>{6c8237c5-2c7c-46c1-a92a-163afdf053ef}</Project>
-      <Name>MovieCRUD.Domain</Name>
-    </ProjectReference>
-  </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

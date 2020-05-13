@@ -190,15 +190,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Network\v1\AuthApiClient.cs" />
-    <Compile Include="Network\v1\Interfaces\IAuthApiClient.cs" />
-    <Compile Include="Network\v1\Interfaces\IMovieApiClient.cs" />
-    <Compile Include="Network\v1\MovieApiRoutes.cs" />
     <Compile Include="IoC\ContainerConfig.cs" />
     <Compile Include="Logging\ILogger.cs" />
     <Compile Include="Logging\Logger.cs" />
     <Compile Include="Logging\LoggingConfig.cs" />
-    <Compile Include="Network\v1\MovieApiClient.cs" />
     <Compile Include="Notifications\Messages\EmailMessage.cs" />
     <Compile Include="Notifications\Messages\SmsMessage.cs" />
     <Compile Include="Notifications\Services\EmailService.cs" />
@@ -208,7 +203,6 @@
     <Compile Include="Persistence\ApplicationDbContext.cs" />
     <Compile Include="Persistence\Entities\UserEntity.cs" />
     <Compile Include="Persistence\Entities\MovieEntity.cs" />
-    <Compile Include="Persistence\Enums\Rating.cs" />
     <Compile Include="Persistence\Services\Interfaces\IMovieRepository.cs" />
     <Compile Include="Persistence\Services\Interfaces\IRepository.cs" />
     <Compile Include="Persistence\MappingProfiles\DomainToEntityProfile.cs" />
@@ -226,17 +220,21 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MovieCRUD.Contracts\MovieCRUD.Contracts.csproj">
-      <Project>{aa9c8a9d-aacc-457e-a199-8e11273e966a}</Project>
-      <Name>MovieCRUD.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MovieCRUD.Domain\MovieCRUD.Domain.csproj">
-      <Project>{6C8237C5-2C7C-46C1-A92A-163AFDF053EF}</Project>
-      <Name>MovieCRUD.Domain</Name>
-    </ProjectReference>
+    <Folder Include="Persistence\Migrations\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Persistence\Migrations\" />
+    <ProjectReference Include="..\MovieCRUD.Domain.Authentication2\MovieCRUD.Domain.Authentication.csproj">
+      <Project>{B6DAE6FF-2909-4940-AAD8-F659CCD3CF77}</Project>
+      <Name>MovieCRUD.Domain.Authentication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MovieCRUD.Domain.Movies2\MovieCRUD.Domain.Movies.csproj">
+      <Project>{231DF889-FC75-4E8E-9988-F2BDABE7FB0A}</Project>
+      <Name>MovieCRUD.Domain.Movies</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MovieCRUD.SharedKernel2\MovieCRUD.SharedKernel.csproj">
+      <Project>{E7651BDF-F497-4528-AE0E-929325528AC0}</Project>
+      <Name>MovieCRUD.SharedKernel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

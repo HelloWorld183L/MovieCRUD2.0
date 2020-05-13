@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
-using MovieCRUD.Domain.Interfaces;
+using MovieCRUD.SharedKernel;
 
 namespace MovieCRUD.Infrastructure
 {

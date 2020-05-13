@@ -1,7 +1,7 @@
 using Autofac.Extras.Moq;
 using AutoMapper;
 using Moq;
-using MovieCRUD.Api.Tests.TestData;
+using MovieCRUD.Movies.Tests.TestData;
 using MovieCRUD.Contracts.V1.Requests;
 using MovieCRUD.Contracts.V1.Requests.Queries;
 using MovieCRUD.Contracts.V1.Responses;
@@ -14,7 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace MovieCRUD.Api.Tests
+namespace MovieCRUD.Movies.Tests
 {
     public class MovieControllerTests
     {

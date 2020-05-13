@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using MovieCRUD.Desktop.Models.DTOs;
-using MovieCRUD.Contracts.V1.Requests;
+using MovieCRUD.Movies.Requests;
 
 namespace MovieCRUD.Desktop.Tests.MappingProfiles
 {

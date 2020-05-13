@@ -1,4 +1,4 @@
-namespace MovieCRUD.Api.Areas.HelpPage.ModelDescriptions
+namespace MovieCRUD.Movies.Areas.HelpPage.ModelDescriptions
 {
     public class DictionaryModelDescription : KeyValuePairModelDescription
     {

@@ -2,12 +2,17 @@
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using AutoMapper;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using MovieCRUD.Authentication.Clients;
+using MovieCRUD.Authentication.Notifications.Interfaces;
+using MovieCRUD.Authentication.Notifications.Messages;
+using MovieCRUD.Authentication.Requests;
+using MovieCRUD.Authentication.V1.Requests;
 using MovieCRUD.Controllers;
 using MovieCRUD.Enums;
-using MovieCRUD.Infrastructure.Notifications.Messages;
 using MovieCRUD.Infrastructure.Persistence.Interfaces;
 using MovieCRUD.Web.ViewModels;
 
@@ -16,15 +21,17 @@ namespace MovieCRUD.Web.Controllers
     [Authorize]
     public class ManageController : Controller
     {
-        private readonly IUserRepository _userRepo;
+        private readonly IAuthApiClient _apiClient;
+        private readonly ISmsService _smsService;
+        private readonly IMapper _mapper;
 
         public ManageController()
         {
         }
 
-        public ManageController(IUserRepository repo)
+        public ManageController(IAuthApiClient client)
         {
-            _userRepo = repo;
+            _apiClient = client;
         }
 
         [HttpGet]
@@ -54,13 +61,13 @@ namespace MovieCRUD.Web.Controllers
                     ViewBag.StatusMessage = "";
                     break;
             }
-            var userLogins = await _userRepo.GetLoginsAsync(User.Identity.GetUserId());
+            var userLogins = await _apiClient.GetLoginsAsync(User.Identity.GetUserId());
 
             var model = new IndexViewModel
             {
                 HasPassword = await HasPassword(),
-                PhoneNumber = await _userRepo.GetPhoneNumberAsync(User.Identity.GetUserId()),
-                TwoFactorEnabled = await _userRepo.GetTwoFactorEnabledAsync(User.Identity.GetUserId()),
+                PhoneNumber = await _apiClient.GetPhoneNumberAsync(User.Identity.GetUserId()),
+                TwoFactorEnabled = await _apiClient.GetTwoFactorEnabledAsync(User.Identity.GetUserId()),
                 Logins = userLogins.ToList(),
                 BrowserRemembered = AuthenticationManager.TwoFactorBrowserRemembered(User.Identity.GetUserId())
             };
@@ -71,11 +78,22 @@ namespace MovieCRUD.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> RemoveLogin(string loginProvider, string providerKey)
         {
-            var result = await _userRepo.RemoveLoginAsync(User.Identity.GetUserId(), new UserLoginInfo(loginProvider, providerKey));
+            var removeLoginRequest = new RemoveLoginRequest(loginProvider, providerKey);
+
+            var result = await _apiClient.RemoveLoginAsync(removeLoginRequest);
             if (result.Succeeded)
             {
-                var user = await _userRepo.GetUserByIdAsync(User.Identity.GetUserId());
-                if (user != null) await _userRepo.SignIn(user, isPersistent: false, rememberBrowser: false);
+                var user = await _apiClient.GetUserByIdAsync(User.Identity.GetUserId());
+                if (user != null)
+                {
+                    var signInRequest = new SignInRequest()
+                    {
+                        User = user,
+                        IsPersistent = false,
+                        RememberBrowser = false
+                    };
+                    await _apiClient.SignInAsync(signInRequest);
+                }
             }
 
             ManageMessageId? message = result.Succeeded ? ManageMessageId.RemoveLoginSuccess : ManageMessageId.Error;
@@ -90,33 +108,51 @@ namespace MovieCRUD.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AddPhoneNumber(AddPhoneNumberViewModel model)
+        public ActionResult AddPhoneNumber(AddPhoneNumberViewModel addPhoneNumberModel)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid) return View(addPhoneNumberModel);
 
             // Generate the token and send it
-            var code = _userRepo.GenerateChangePhoneNumberToken(User.Identity.GetUserId(), model.Number);
-            if (_userRepo.SmsService != null)
+            var request = new GenerateChangePhoneNumberTokenRequest()
+            {
+                PhoneNumber = addPhoneNumberModel.Number,
+                UserId = User.Identity.GetUserId()
+            };
+
+            var code = _apiClient.GenerateChangePhoneNumberTokenAsync(request);
+            if (_smsService != null)
             {
                 var message = new SmsMessage
                 {
-                    Destination = model.Number,
+                    Destination = addPhoneNumberModel.Number,
                     Body = "Your security code is: " + code
                 };
-                _userRepo.SmsService.SendMessage(message);
+                _smsService.SendMessage(message);
             }
-            return RedirectToAction("VerifyPhoneNumber", new { PhoneNumber = model.Number });
+            return RedirectToAction("VerifyPhoneNumber", new { PhoneNumber = addPhoneNumberModel.Number });
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> EnableTwoFactorAuthentication()
         {
-            await _userRepo.SetTwoFactorEnabled(User.Identity.GetUserId(), true);
-            var user = await _userRepo.GetUserByIdAsync(User.Identity.GetUserId());
+            var setTwoFactorRequest = new SetTwoFactorEnabledRequest()
+            {
+                UserId = User.Identity.GetUserId(),
+                IsEnabled = true
+            };
+
+            await _apiClient.SetTwoFactorEnabledAsync(setTwoFactorRequest);
+            var user = await _apiClient.GetUserByIdAsync(User.Identity.GetUserId());
             if (user != null)
             {
-                await _userRepo.SignIn(user, isPersistent: false, rememberBrowser: false);
+                var signInRequest = new SignInRequest()
+                {
+                    User = user,
+                    IsPersistent = false,
+                    RememberBrowser = false
+                };
+                await _apiClient.SignInAsync(signInRequest);
             }
             return RedirectToAction("Index", "Manage");
         }
@@ -125,9 +161,23 @@ namespace MovieCRUD.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DisableTwoFactorAuthentication()
         {
-            await _userRepo.SetTwoFactorEnabled(User.Identity.GetUserId(), false);
-            var user = await _userRepo.GetUserByIdAsync(User.Identity.GetUserId());
-            if (user != null) await _userRepo.SignIn(user, isPersistent: false, rememberBrowser: false);
+            var setTwoFactorRequest = new SetTwoFactorEnabledRequest()
+            {
+                UserId = User.Identity.GetUserId(),
+                IsEnabled = false
+            };
+            await _apiClient.SetTwoFactorEnabledAsync(setTwoFactorRequest);
+            var user = await _apiClient.GetUserByIdAsync(User.Identity.GetUserId());
+            if (user != null)
+            {
+                var signInRequest = new SignInRequest()
+                {
+                    User = user,
+                    IsPersistent = false,
+                    RememberBrowser = false
+                };
+                await _apiClient.SignInAsync(signInRequest);
+            }
 
             return RedirectToAction("Index", "Manage");
         }
@@ -135,7 +185,12 @@ namespace MovieCRUD.Web.Controllers
         [HttpGet]
         public ActionResult VerifyPhoneNumber(string phoneNumber)
         {
-            var code = _userRepo.GenerateChangePhoneNumberToken(User.Identity.GetUserId(), phoneNumber);
+            var request = new GenerateChangePhoneNumberTokenRequest()
+            {
+                PhoneNumber = phoneNumber,
+                UserId = User.Identity.GetUserId()
+            };
+            var code = _apiClient.GenerateChangePhoneNumberTokenAsync(request);
             // Send an SMS through the SMS provider to verify the phone number
             return phoneNumber == null ? View("Error") :
                 View(new VerifyPhoneNumberViewModel { PhoneNumber = phoneNumber });
@@ -143,34 +198,62 @@ namespace MovieCRUD.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> VerifyPhoneNumber(VerifyPhoneNumberViewModel model)
+        public async Task<ActionResult> VerifyPhoneNumber(VerifyPhoneNumberViewModel verifyPhoneNumberModel)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid) return View(verifyPhoneNumberModel);
 
-            var result = await _userRepo.ChangePhoneNumberAsync(User.Identity.GetUserId(), model.PhoneNumber, model.Code);
+            var request = new ChangePhoneNumberRequest()
+            {
+                UserId = User.Identity.GetUserId(),
+                PhoneNumber = verifyPhoneNumberModel.PhoneNumber,
+                Code = verifyPhoneNumberModel.Code
+            };
+
+            var result = await _apiClient.ChangePhoneNumberAsync(request);
             if (result.Succeeded)
             {
-                var user = await _userRepo.GetUserByIdAsync(User.Identity.GetUserId());
-                if (user != null) await _userRepo.SignIn(user, isPersistent: false, rememberBrowser: false);
+                var user = await _apiClient.GetUserByIdAsync(User.Identity.GetUserId());
+                if (user != null)
+                {
+                    var signInRequest = new SignInRequest()
+                    {
+                        User = user,
+                        IsPersistent = false,
+                        RememberBrowser = false
+                    };
+                    await _apiClient.SignInAsync(signInRequest);
+                }
 
                 return RedirectToAction("Index", new { Message = ManageMessageId.AddPhoneSuccess });
             }
             // If we got this far, something failed, redisplay form
             ModelState.AddModelError("", "Failed to verify phone");
-            return View(model);
+            return View(verifyPhoneNumberModel);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> RemovePhoneNumber()
         {
-            var result = await _userRepo.SetPhoneNumberAsync(User.Identity.GetUserId(), null);
+            var request = new SetPhoneNumberRequest()
+            {
+                UserId = User.Identity.GetUserId(),
+                NewPhoneNumber = null
+            };
+
+            var result = await _apiClient.SetPhoneNumberAsync(request);
             if (!result.Succeeded) return RedirectToAction("Index", new { Message = ManageMessageId.Error });
 
-            var user = await _userRepo.GetUserByIdAsync(User.Identity.GetUserId());
+            var user = await _apiClient.GetUserByIdAsync(User.Identity.GetUserId());
             if (user != null)
             {
-                await _userRepo.SignIn(user, isPersistent: false, rememberBrowser: false);
+                var signInRequest = new SignInRequest()
+                {
+                    User = user,
+                    IsPersistent = false,
+                    RememberBrowser = false
+                };
+                await _apiClient.SignInAsync(signInRequest);
             }
 
             return RedirectToAction("Index", new { Message = ManageMessageId.RemovePhoneSuccess });
@@ -184,22 +267,32 @@ namespace MovieCRUD.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> ChangePassword(ChangePasswordViewModel model)
+        public async Task<ActionResult> ChangePassword(ChangePasswordViewModel changePasswordModel)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid) return View(changePasswordModel);
 
-            var result = await _userRepo.ChangePasswordAsync(User.Identity.GetUserId(), model.OldPassword, model.NewPassword);
-            if (result.Succeeded)
+            var changePasswordRequest = _mapper.Map<ChangePasswordRequest>(changePasswordModel);
+
+            var result = await _apiClient.ChangePasswordAsync(changePasswordRequest);
+
+            if (!result.Succeeded)
             {
-                var user = await _userRepo.GetUserByIdAsync(User.Identity.GetUserId());
-                if (user != null)
-                {
-                    await _userRepo.SignIn(user, isPersistent: false, rememberBrowser: false);
-                }
-                return RedirectToAction("Index", new { Message = ManageMessageId.ChangePasswordSuccess });
+                ControllerExtensions.Instance.AddErrors(result);
+                return View(changePasswordModel);
             }
-            ControllerExtensions.Instance.AddErrors(result);
-            return View(model);
+
+            var user = await _apiClient.GetUserByIdAsync(User.Identity.GetUserId());
+            if (user != null)
+            {
+                var signInRequest = new SignInRequest()
+                {
+                    User = user,
+                    IsPersistent = false,
+                    RememberBrowser = false
+                };
+                await _apiClient.SignInAsync(signInRequest);
+            }
+            return RedirectToAction("Index", new { Message = ManageMessageId.ChangePasswordSuccess });
         }
 
         [HttpGet]
@@ -210,34 +303,46 @@ namespace MovieCRUD.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> SetPassword(SetPasswordViewModel model)
+        public async Task<ActionResult> SetPassword(SetPasswordViewModel setPasswordModel)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid) return View(setPasswordModel);
 
-            var addPasswordResult = await _userRepo.AddPasswordAsync(User.Identity.GetUserId(), model.NewPassword);
+            var request = new AddPasswordRequest()
+            {
+                UserId = User.Identity.GetUserId(),
+                NewPassword = setPasswordModel.NewPassword
+            };
+
+            var addPasswordResult = await _apiClient.AddPasswordAsync(request);
             if (addPasswordResult.Succeeded)
             {
-                var user = await _userRepo.GetUserByIdAsync(User.Identity.GetUserId());
+                var user = await _apiClient.GetUserByIdAsync(User.Identity.GetUserId());
                 if (user != null)
                 {
-                    await _userRepo.SignIn(user, isPersistent: false, rememberBrowser: false);
+                    var signInRequest = new SignInRequest()
+                    {
+                        User = user,
+                        IsPersistent = false,
+                        RememberBrowser = false
+                    };
+                    await _apiClient.SignInAsync(signInRequest);
                 }
                 return RedirectToAction("Index", new { Message = ManageMessageId.SetPasswordSuccess });
             }
-            return View(model);
+            return View(setPasswordModel);
         }
 
         [HttpGet]
         public async Task<ActionResult> ManageLogins(ManageMessageId? message)
         {
             ViewBag.StatusMessage =
-                message == ManageMessageId.RemoveLoginSuccess ? "The external login was removed."
+                  message == ManageMessageId.RemoveLoginSuccess ? "The external login was removed."
                 : message == ManageMessageId.Error ? "An error has occurred."
                 : "";
-            var user = await _userRepo.GetUserByIdAsync(User.Identity.GetUserId());
+            var user = await _apiClient.GetUserByIdAsync(User.Identity.GetUserId());
             if (user == null) return View("Error");
 
-            var userLogins = await _userRepo.GetLoginsAsync(User.Identity.GetUserId());
+            var userLogins = await _apiClient.GetLoginsAsync(User.Identity.GetUserId());
             var otherLogins = AuthenticationManager.GetExternalAuthenticationTypes().
                 Where(auth => userLogins.All(loginInfo => auth.AuthenticationType != loginInfo.LoginProvider)).ToList();
 
@@ -266,7 +371,12 @@ namespace MovieCRUD.Web.Controllers
             var loginInfo = AuthenticationManager.GetExternalLoginInfo(XsrfKey, User.Identity.GetUserId());
             if (loginInfo == null) return RedirectToAction("ManageLogins", new { Message = ManageMessageId.Error });
 
-            var addLoginResult = await _userRepo.AddLoginAsync(User.Identity.GetUserId(), loginInfo.Login);
+            var request = new AddLoginRequest()
+            {
+                UserId = User.Identity.GetUserId(),
+                LoginInfo = loginInfo.Login
+            };
+            var addLoginResult = await _apiClient.AddLoginAsync(request);
 
             return addLoginResult.Succeeded ? RedirectToAction("ManageLogins") : RedirectToAction("ManageLogins", new { Message = ManageMessageId.Error });
         }
@@ -282,7 +392,7 @@ namespace MovieCRUD.Web.Controllers
 
         private async Task<bool> HasPassword()
         {
-            var user = await _userRepo.GetUserByIdAsync(User.Identity.GetUserId());
+            var user = await _apiClient.GetUserByIdAsync(User.Identity.GetUserId());
             if (user != null)
             {
                 return user.PasswordHash != null;
@@ -292,7 +402,7 @@ namespace MovieCRUD.Web.Controllers
 
         private async Task<bool> HasPhoneNumber()
         {
-            var user = await _userRepo.GetUserByIdAsync(User.Identity.GetUserId());
+            var user = await _apiClient.GetUserByIdAsync(User.Identity.GetUserId());
             if (user != null)
             {
                 return user.PhoneNumber != null;

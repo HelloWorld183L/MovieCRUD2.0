@@ -2,12 +2,12 @@
 using AutoMapper;
 using MovieCRUD.Desktop.Models;
 using MovieCRUD.Desktop.Models.DTOs;
-using MovieCRUD.Infrastructure.Network;
 using Stylet;
 using System.Collections.Generic;
-using MovieCRUD.Contracts.V1.Responses;
 using MovieCRUD.Infrastructure.Logging;
-using MovieCRUD.Contracts.V1.Requests.Queries;
+using MovieCRUD.Movies.Responses;
+using MovieCRUD.Movies.Clients;
+using MovieCRUD.SharedKernel;
 
 namespace MovieCRUD.Desktop.ViewModels
 {
@@ -32,12 +32,12 @@ namespace MovieCRUD.Desktop.ViewModels
                 _logger.LogInfo("Raised PropertyChanged event within a Movies setter");
             }
         }
-        private MovieApiClient _movieApiClient;
+        private IMovieApiClient _movieApiClient;
         private IWindowManager _windowManager;
         private IMapper _mapper;
         private readonly ILogger _logger;
 
-        public MovieCRUDViewModel(MovieApiClient apiClient, IWindowManager windowManager, IMapper mapper, ILogger logger)
+        public MovieCRUDViewModel(IMovieApiClient apiClient, IWindowManager windowManager, IMapper mapper, ILogger logger)
         {
             _movieApiClient = apiClient;
             _windowManager = windowManager;

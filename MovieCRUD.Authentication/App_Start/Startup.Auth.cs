@@ -5,8 +5,8 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
 using MovieCRUD.Authentication.Providers;
-using MovieCRUD.Contracts.V1.ApiRoutes;
 using MovieCRUD.Infrastructure;
+using MovieCRUD.Authentication.V1;
 
 namespace MovieCRUD.Authentication
 {
@@ -27,9 +27,9 @@ namespace MovieCRUD.Authentication
             PublicClientId = "self";
             OAuthOptions = new OAuthAuthorizationServerOptions
             {
-                TokenEndpointPath = new PathString(ApiRoutes.AccountRoutes.RequestToken),
+                TokenEndpointPath = new PathString(AccountRoutes.RequestToken),
                 Provider = new ApplicationOAuthProvider(),
-                AuthorizeEndpointPath = new PathString(ApiRoutes.AccountRoutes.AuthorizeEndPoint),
+                AuthorizeEndpointPath = new PathString(AccountRoutes.AuthorizeEndPoint),
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(14),
                 AllowInsecureHttp = true
             };

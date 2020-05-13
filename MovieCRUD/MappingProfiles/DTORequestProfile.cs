@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using MovieCRUD.Contracts.V1.Requests;
 using MovieCRUD.DTOs;
+using MovieCRUD.Movies.Requests;
 
 namespace MovieCRUD.MappingProfiles
 {

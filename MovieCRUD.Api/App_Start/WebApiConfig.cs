@@ -1,6 +1,6 @@
 ﻿using System.Web.Http;
 
-namespace MovieCRUD.Api
+namespace MovieCRUD.Movies
 {
     public static class WebApiConfig
     {

@@ -1,19 +1,19 @@
 using AutoMapper;
 using Moq;
-using MovieCRUD.Api;
-using MovieCRUD.Contracts.V1.Requests;
-using MovieCRUD.Contracts.V1.Requests.Queries;
-using MovieCRUD.Contracts.V1.Responses;
+using MovieCRUD.Movies;
 using MovieCRUD.Controllers;
 using MovieCRUD.DTOs;
-using MovieCRUD.Infrastructure.Logging;
-using MovieCRUD.Infrastructure.Network.v1.Interfaces;
 using MovieCRUD.Tests.TestData;
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using MovieCRUD.Movies.Clients;
+using MovieCRUD.Infrastructure.Logging;
+using MovieCRUD.SharedKernel;
+using MovieCRUD.Movies.Requests;
+using MovieCRUD.Movies.Responses;
 
 namespace MovieCRUD.Tests
 {
@@ -141,7 +141,7 @@ namespace MovieCRUD.Tests
                 Id = movieResponse.Id,
                 Name = movieResponse.Name,
                 Genre = movieResponse.Genre,
-                Rating = (Enums.Rating)movieResponse.Rating
+                Rating = movieResponse.Rating
             };
 
             _mockMapper.Setup(x => x.Map<MovieDTO>(movieResponse))
@@ -180,7 +180,7 @@ namespace MovieCRUD.Tests
                 Id = movieResponse.Id,
                 Name = movieResponse.Name,
                 Genre = movieResponse.Genre,
-                Rating = Enums.Rating.Good
+                Rating = Rating.Good
             };
 
             _mockMapper.Setup(x => x.Map<MovieDTO>(movieResponse))
@@ -297,7 +297,7 @@ namespace MovieCRUD.Tests
                 Id = 1,
                 Name = "Harry Potter: The Philosopher's Stone",
                 Genre = "Mystery",
-                Rating = Enums.Rating.Good
+                Rating = Rating.Good
             };
 
             var movieDto2 = new MovieDTO()
@@ -305,7 +305,7 @@ namespace MovieCRUD.Tests
                 Id = 2,
                 Name = "Harry Potter: Deathly Hallows",
                 Genre = "Mystery/Action",
-                Rating = Enums.Rating.Masterpiece
+                Rating = Rating.Masterpiece
             };
 
             yield return movieDto1;
@@ -322,7 +322,7 @@ namespace MovieCRUD.Tests
                     Id = expectedMovie.Id,
                     Name = expectedMovie.Name,
                     Genre = expectedMovie.Genre,
-                    Rating = Enums.Rating.Good
+                    Rating = Rating.Good
                 };
                 mappedMovies.Add(movieDto);
             }

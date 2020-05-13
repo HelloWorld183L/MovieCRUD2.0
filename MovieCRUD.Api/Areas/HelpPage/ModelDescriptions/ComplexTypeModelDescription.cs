@@ -1,6 +1,6 @@
 using System.Collections.ObjectModel;
 
-namespace MovieCRUD.Api.Areas.HelpPage.ModelDescriptions
+namespace MovieCRUD.Movies.Areas.HelpPage.ModelDescriptions
 {
     public class ComplexTypeModelDescription : ModelDescription
     {

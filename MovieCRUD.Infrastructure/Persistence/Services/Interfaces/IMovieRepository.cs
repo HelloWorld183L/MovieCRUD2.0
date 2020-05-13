@@ -1,5 +1,6 @@
 ﻿using MovieCRUD.Domain;
-using MovieCRUD.Domain.Filters;
+using MovieCRUD.Domain.Movies;
+using MovieCRUD.SharedKernel;
 using System.Collections.Generic;
 
 namespace MovieCRUD.Infrastructure.Interfaces

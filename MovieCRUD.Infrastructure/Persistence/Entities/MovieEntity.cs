@@ -1,5 +1,4 @@
-﻿using MovieCRUD.Infrastructure.Enums;
-using MovieCRUD.Domain.Interfaces;
+﻿using MovieCRUD.SharedKernel;
 
 namespace MovieCRUD.Infrastructure.Entities
 {

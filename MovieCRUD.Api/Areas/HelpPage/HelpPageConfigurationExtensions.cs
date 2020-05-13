@@ -11,10 +11,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using MovieCRUD.Api.Areas.HelpPage.ModelDescriptions;
-using MovieCRUD.Api.Areas.HelpPage.Models;
+using MovieCRUD.Movies.Areas.HelpPage.ModelDescriptions;
+using MovieCRUD.Movies.Areas.HelpPage.Models;
 
-namespace MovieCRUD.Api.Areas.HelpPage
+namespace MovieCRUD.Movies.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

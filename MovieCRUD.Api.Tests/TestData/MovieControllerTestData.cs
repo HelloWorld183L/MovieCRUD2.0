@@ -3,7 +3,7 @@ using MovieCRUD.Domain;
 using NUnit.Framework;
 using System.Collections;
 
-namespace MovieCRUD.Api.Tests.TestData
+namespace MovieCRUD.Movies.Tests.TestData
 {
     public class MovieControllerTestData
     {

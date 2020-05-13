@@ -1,11 +1,10 @@
 ﻿using AutoMapper;
 using MovieCRUD.Infrastructure.Interfaces;
-using MovieCRUD.Domain.Interfaces;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using MovieCRUD.Infrastructure.Logging;
-using MovieCRUD.Domain.Filters;
+using MovieCRUD.SharedKernel;
 
 namespace MovieCRUD.Infrastructure.Services
 {

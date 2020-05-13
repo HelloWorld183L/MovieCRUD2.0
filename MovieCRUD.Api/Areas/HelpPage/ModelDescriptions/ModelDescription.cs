@@ -1,6 +1,6 @@
 using System;
 
-namespace MovieCRUD.Api.Areas.HelpPage.ModelDescriptions
+namespace MovieCRUD.Movies.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Describes a type model.

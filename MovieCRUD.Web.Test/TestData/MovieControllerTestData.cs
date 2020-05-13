@@ -1,6 +1,7 @@
-﻿using MovieCRUD.Contracts.V1.Responses;
-using MovieCRUD.DTOs;
+﻿using MovieCRUD.DTOs;
 using MovieCRUD.Enums;
+using MovieCRUD.Movies.Responses;
+using MovieCRUD.SharedKernel;
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ namespace MovieCRUD.Tests.TestData
                     Id = 1,
                     Name = "Harry Potter: The Philosopher's Stone",
                     Genre = "Mystery",
-                    Rating = Api.Rating.Good
+                    Rating = Rating.Good
                 };
 
                 var movieResponse2 = new MovieResponse()
@@ -27,7 +28,7 @@ namespace MovieCRUD.Tests.TestData
                     Id = 2,
                     Name = "Harry Potter: Deathly Hallows",
                     Genre = "Mystery/Action",
-                    Rating = Api.Rating.Masterpiece
+                    Rating = Rating.Masterpiece
                 };
 
                 yield return new TestCaseData(movieResponse1);
@@ -46,7 +47,7 @@ namespace MovieCRUD.Tests.TestData
                     Id = 1,
                     Name = "Harry Potter: The Philosopher's Stone",
                     Genre = "Mystery",
-                    Rating = Api.Rating.Good
+                    Rating = Rating.Good
                 };
 
                 var movieResponse2 = new MovieResponse()
@@ -54,7 +55,7 @@ namespace MovieCRUD.Tests.TestData
                     Id = 2,
                     Name = "Harry Potter: Deathly Hallows",
                     Genre = "Mystery/Action",
-                    Rating = Api.Rating.Masterpiece
+                    Rating = Rating.Masterpiece
                 };
 
                 movieResponses.Add(movieResponse1);

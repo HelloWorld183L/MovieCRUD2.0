@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
 using MovieCRUD.Desktop.Models;
-using MovieCRUD.Desktop.Enums;
-using MovieCRUD.Infrastructure.Network;
 using Stylet;
 using System;
 using System.Windows.Input;
-using MovieCRUD.Contracts.V1.Requests;
 using MovieCRUD.Desktop.Models.DTOs;
 using MovieCRUD.Infrastructure.Logging;
+using MovieCRUD.Movies.Clients;
+using MovieCRUD.Movies.Requests;
+using MovieCRUD.SharedKernel;
 
 namespace MovieCRUD.Desktop.ViewModels
 {
@@ -16,11 +16,11 @@ namespace MovieCRUD.Desktop.ViewModels
         public ICommand SaveChangesCommand { get; private set; }
         public MovieDTO NewMovie { get; set; }
         public Array Ratings { get; private set; }
-        private readonly MovieApiClient _apiClient;
+        private readonly IMovieApiClient _apiClient;
         private readonly IMapper _mapper;
         private readonly ILogger _logger;
 
-        public CreateMovieViewModel(MovieApiClient apiClient, IMapper mapper, ILogger logger)
+        public CreateMovieViewModel(IMovieApiClient apiClient, IMapper mapper, ILogger logger)
         {
             NewMovie = new MovieDTO();
             _apiClient = apiClient;

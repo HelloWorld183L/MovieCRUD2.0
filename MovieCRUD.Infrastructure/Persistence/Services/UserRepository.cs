@@ -2,7 +2,7 @@
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
-using MovieCRUD.Domain.DomainObjects;
+using MovieCRUD.Domain.Authentication;
 using MovieCRUD.Infrastructure.Logging;
 using MovieCRUD.Infrastructure.Notifications.Services;
 using MovieCRUD.Infrastructure.Notifications.Services.Interfaces;

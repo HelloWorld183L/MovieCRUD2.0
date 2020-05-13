@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace MovieCRUD.Api
+namespace MovieCRUD.Movies
 {
     public class FilterConfig
     {

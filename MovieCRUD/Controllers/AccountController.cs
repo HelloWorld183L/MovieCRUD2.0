@@ -6,14 +6,16 @@ using MovieCRUD.Web;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using MovieCRUD.Infrastructure.Network.v1.Interfaces;
 using AutoMapper;
 using System.Web.Services.Description;
-using MovieCRUD.Contracts.V1.Responses.Authentication;
-using MovieCRUD.Contracts.V1.Requests.Authentication;
 using System.Threading.Tasks;
-using MovieCRUD.Contracts.V1.Requests;
 using System.Web.UI.WebControls;
+using MovieCRUD.Authentication.Clients;
+using MovieCRUD.Authentication.Requests;
+using MovieCRUD.Authentication.Responses;
+using MovieCRUD.Authentication.V1.Requests;
+using MovieCRUD.Authentication.Notifications.Messages;
+using MovieCRUD.Authentication.Models.IdentityModels;
 
 namespace MovieCRUD.Controllers
 {
@@ -101,24 +103,23 @@ namespace MovieCRUD.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult VerifyCode(VerifyCodeViewModel model)
+        public async Task<ActionResult> VerifyCode(VerifyCodeViewModel verifyCodeModel)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
+            if (!ModelState.IsValid) return View(verifyCodeModel);
 
-            var result = SignInManager.TwoFactorSignIn(model.Provider, model.Code, model.RememberMe, model.RememberBrowser);
-            switch (result)
+            var request = _mapper.Map<TwoFactorSignInRequest>(verifyCodeModel);
+
+            var twoFactorSignInResult = await _apiClient.TwoFactorSignInAsync(request);
+            switch (twoFactorSignInResult)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(model.ReturnUrl);
+                    return RedirectToLocal(verifyCodeModel.ReturnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Invalid code. ");
-                    return View(model);
+                    return View(verifyCodeModel);
             }
         }
 
@@ -172,14 +173,12 @@ namespace MovieCRUD.Controllers
 
         [AllowAnonymous]
         [HttpGet]
-        public ActionResult SendCode(string returnUrl, bool rememberMe)
+        public async Task<ActionResult> SendCode(string returnUrl, bool rememberMe)
         {
-            var userId = SignInManager.GetVerifiedUserId();
-            if (userId == null)
-            {
-                return View("Error");
-            }
-            var userFactors = UserManager.GetValidTwoFactorProviders(userId);
+            var userId = await _apiClient.GetVerifiedUserIdAsync();
+            if (userId == null) return View("Error");
+
+            var userFactors = await _apiClient.GetValidTwoFactorProvidersAsync(userId);
             var factorOptions = userFactors.Select(purpose => new SelectListItem { Text = purpose, Value = purpose }).ToList();
             return View(new SendCodeViewModel { Providers = factorOptions, ReturnUrl = returnUrl, RememberMe = rememberMe });
         }
@@ -187,34 +186,36 @@ namespace MovieCRUD.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult SendCode(SendCodeViewModel model)
+        public async Task<ActionResult> SendCode(SendCodeViewModel sendCodeModel)
         {
-            if (!ModelState.IsValid)
-            {
-                return View();
-            }
+            if (!ModelState.IsValid) return View();
+
+            var result = await _apiClient.SendTwoFactorAsync(sendCodeModel.SelectedProvider);
 
             // Generate the token and send it
-            if (!SignInManager.SendTwoFactorCode(model.SelectedProvider))
-            {
-                return View("Error");
-            }
-            return RedirectToAction("VerifyCode", new { Provider = model.SelectedProvider, ReturnUrl = model.ReturnUrl, RememberMe = model.RememberMe });
+            if (!result.Succeeded) return View("Error");
+
+            return RedirectToAction("VerifyCode", new { Provider = sendCodeModel.SelectedProvider, ReturnUrl = sendCodeModel.ReturnUrl, RememberMe = sendCodeModel.RememberMe });
         }
 
         [AllowAnonymous]
         [HttpGet]
-        public ActionResult ExternalLoginCallback(string returnUrl)
+        public async Task<ActionResult> ExternalLoginCallback(string returnUrl)
         {
-            var loginInfo = AuthenticationManager.GetExternalLoginInfo();
-            if (loginInfo == null)
-            {
-                return RedirectToAction("Login");
-            }
+            var loginInfo = await _apiClient.GetExternalLoginInfoAsync();
+
+            if (loginInfo == null) return RedirectToAction("Login");
 
             // Sign in the user with this external login provider if the user already has a login
-            var result = SignInManager.ExternalSignIn(loginInfo, isPersistent: false);
-            switch (result)
+
+            var externalSignInRequest = new ExternalSignInRequest()
+            {
+                LoginInfo = loginInfo,
+                IsPersistent = false
+            };
+
+            var externalSignInResult = await _apiClient.ExternalSignInAsync(externalSignInRequest);
+            switch (externalSignInResult)
             {
                 case SignInStatus.Success:
                     return RedirectToLocal(returnUrl);
@@ -234,45 +235,50 @@ namespace MovieCRUD.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult ExternalLoginConfirmation(ExternalLoginConfirmationViewModel model, string returnUrl)
+        public async Task<ActionResult> ExternalLoginConfirmation(ExternalLoginConfirmationViewModel model, string returnUrl)
         {
             if (User.Identity.IsAuthenticated) return RedirectToAction("Index", "Manage");
             if (!ModelState.IsValid) return View(model);
 
-            var loginInfo = AuthenticationManager.GetExternalLoginInfo();
-            if (loginInfo == null)
-            {
-                return View("ExternalLoginFailure");
-            }
+            var loginInfo = await _apiClient.GetExternalLoginInfoAsync();
+
+            if (loginInfo == null) return View("ExternalLoginFailure");
 
             ViewBag.ReturnUrl = returnUrl;
             return RedirectToLocal(returnUrl);
         }
 
         [HttpPost]
-        public ActionResult ForgotPassword(ForgotPasswordViewModel forgotPasswordModel)
+        public async Task<ActionResult> ForgotPassword(ForgotPasswordViewModel forgotPasswordModel)
         {
             if (!ModelState.IsValid) return View(forgotPasswordModel);
 
-            var user = UserManager.FindByName(forgotPasswordModel.Email);
-            if (user == null || !UserManager.IsEmailConfirmed(user.Id))
-            {
-                return View("ForgotPasswordConfirmation");
-            }
-            var resetToken = UserManager.GeneratePasswordResetToken(user.Id);
+            var user = await _apiClient.FindByNameAsync(forgotPasswordModel.Email);
+            if (user == null || ! await _apiClient.IsEmailConfirmedAsync(user.Id.ToString())) return View("ForgotPasswordConfirmation");
+
+            var resetToken = await _apiClient.GeneratePasswordResetTokenAsync(user.Id.ToString());
             var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, resetToken });
-            UserManager.SendEmail(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
+
+            var email = new EmailMessage("Reset Password", $"Please reset your password by clicking <a href=\"{callbackUrl}\">here</a>");
+
+            await _apiClient.SendEmailAsync(user.Id.ToString(), email);
+
+            return View(forgotPasswordModel);
         }
 
         [HttpGet]
         [AllowAnonymous]
-        public ActionResult ConfirmEmail(string userId, string code)
+        public async Task<ActionResult> ConfirmEmail(string userId, string code)
         {
-            if (userId == null || code == null)
+            if (userId == null || code == null) return View("Error");
+
+            var request = new ConfirmEmailRequest()
             {
-                return View("Error");
-            }
-            var result = UserManager.ConfirmEmail(userId, code);
+                Code = code,
+                UserId = userId
+            };
+
+            var result = await _apiClient.ConfirmEmail(request);
             return View(result.Succeeded ? "ConfirmEmail" : "Error");
         }
 

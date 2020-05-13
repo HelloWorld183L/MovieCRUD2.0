@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using MovieCRUD.Desktop.Models.DTOs;
-using MovieCRUD.Contracts.V1.Requests;
+using MovieCRUD.Movies.Requests;
 
 namespace MovieCRUD.Desktop.MappingProfiles
 {
@@ -8,8 +8,8 @@ namespace MovieCRUD.Desktop.MappingProfiles
     {
         public DTORequestProfile()
         {
-            CreateMap<MovieDTO, MovieDTO>().ReverseMap();
-            CreateMap<Models.DTOs.MovieDTO, EditMovieRequest>().ReverseMap();
+            CreateMap<MovieDTO, CreateMovieRequest>().ReverseMap();
+            CreateMap<MovieDTO, EditMovieRequest>().ReverseMap();
         }
     }
 }

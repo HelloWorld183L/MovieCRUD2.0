@@ -55,6 +55,9 @@
     <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.9.0.0\lib\net461\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="AutoMapper.Extensions.Microsoft.DependencyInjection, Version=0.0.0.0, Culture=neutral, PublicKeyToken=e767ac9c89543656, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.Extensions.Microsoft.DependencyInjection.7.0.0\lib\netstandard2.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -74,12 +77,18 @@
       <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.7\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=3.1.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.3.1.4\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=3.1.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.3.1.4\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Owin, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.4.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
     </Reference>
@@ -197,7 +206,6 @@
     <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Models\DTOs\MovieDTO.cs" />
     <Compile Include="Enums\ManageMessageId.cs" />
-    <Compile Include="Enums\Rating.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -209,7 +217,6 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\ChallengeResult.cs" />
     <Compile Include="ViewModels\Account ViewModels\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="ViewModels\Account ViewModels\ExternalLoginListViewModel.cs" />
@@ -312,21 +319,29 @@
     <Content Include="Scripts\jquery-3.5.0.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MovieCRUD.Api\MovieCRUD.Api.csproj">
+    <ProjectReference Include="..\MovieCRUD.Api\MovieCRUD.Movies.csproj">
       <Project>{08DAC1F4-AF18-4B8A-8CB3-303966E397E2}</Project>
-      <Name>MovieCRUD.Api</Name>
+      <Name>MovieCRUD.Movies</Name>
     </ProjectReference>
     <ProjectReference Include="..\MovieCRUD.Authentication\MovieCRUD.Authentication.csproj">
       <Project>{09CF7AE7-E54C-4F7A-982E-B36DD66F5A4C}</Project>
       <Name>MovieCRUD.Authentication</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MovieCRUD.Contracts\MovieCRUD.Contracts.csproj">
-      <Project>{aa9c8a9d-aacc-457e-a199-8e11273e966a}</Project>
-      <Name>MovieCRUD.Contracts</Name>
+    <ProjectReference Include="..\MovieCRUD.Domain.Authentication2\MovieCRUD.Domain.Authentication.csproj">
+      <Project>{B6DAE6FF-2909-4940-AAD8-F659CCD3CF77}</Project>
+      <Name>MovieCRUD.Domain.Authentication</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MovieCRUD.Infrastructure\MovieCRUD.Infrastructure.csproj">
-      <Project>{85C5DBB8-0D18-4FAC-A76C-B49CCF8C9BA0}</Project>
-      <Name>MovieCRUD.Infrastructure</Name>
+    <ProjectReference Include="..\MovieCRUD.Infrastructure.Logging\MovieCRUD.Infrastructure.Logging.csproj">
+      <Project>{6BAE797A-E601-496D-A840-11CA37D57231}</Project>
+      <Name>MovieCRUD.Infrastructure.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MovieCRUD.Infrastructure.Persistence\MovieCRUD.Infrastructure.Persistence.csproj">
+      <Project>{9BDD3FBB-9269-4620-A42E-6F3A3D14CD62}</Project>
+      <Name>MovieCRUD.Infrastructure.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MovieCRUD.SharedKernel2\MovieCRUD.SharedKernel.csproj">
+      <Project>{e7651bdf-f497-4528-ae0e-929325528ac0}</Project>
+      <Name>MovieCRUD.SharedKernel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

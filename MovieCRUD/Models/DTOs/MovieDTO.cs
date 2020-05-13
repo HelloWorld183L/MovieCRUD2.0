@@ -1,4 +1,5 @@
 ﻿using MovieCRUD.Enums;
+using MovieCRUD.SharedKernel;
 
 namespace MovieCRUD.DTOs
 {

@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace MovieCRUD.Api.Areas.HelpPage.ModelDescriptions
+namespace MovieCRUD.Movies.Areas.HelpPage.ModelDescriptions
 {
     public interface IModelDocumentationProvider
     {

@@ -15,7 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MovieCRUD.Infrastructure\MovieCRUD.Infrastructure.csproj" />
+    <ProjectReference Include="..\MovieCRUD.Domain.Movies2\MovieCRUD.Domain.Movies.csproj" />
+    <ProjectReference Include="..\MovieCRUD.SharedKernel2\MovieCRUD.SharedKernel.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,4 @@
-﻿using MovieCRUD.Infrastructure.Network;
-using Autofac.Integration.Mvc;
+﻿using Autofac.Integration.Mvc;
 using Autofac.Integration.WebApi;
 using System.Collections.Generic;
 using System.Reflection;
@@ -11,10 +10,8 @@ using Stylet;
 using System;
 using MovieCRUD.Infrastructure.Services;
 using MovieCRUD.Infrastructure.Logging;
-using MovieCRUD.Infrastructure.Network.v1.Interfaces;
 using MovieCRUD.Infrastructure.Persistence.Services;
 using Autofac.Core;
-using MovieCRUD.Infrastructure.Network.v1;
 
 namespace MovieCRUD.Infrastructure.IoC
 {

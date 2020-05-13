@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using MovieCRUD.Contracts.V1.Requests;
-using MovieCRUD.Domain.DomainObjects;
+using MovieCRUD.Authentication.Requests;
+using MovieCRUD.Domain.Authentication;
 
 namespace MovieCRUD.Authentication.MappingProfiles
 {

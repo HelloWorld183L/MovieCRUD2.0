@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using MovieCRUD.Api.Areas.HelpPage.ModelDescriptions;
-using MovieCRUD.Api.Areas.HelpPage.Models;
+using MovieCRUD.Movies.Areas.HelpPage.ModelDescriptions;
+using MovieCRUD.Movies.Areas.HelpPage.Models;
 
-namespace MovieCRUD.Api.Areas.HelpPage.Controllers
+namespace MovieCRUD.Movies.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

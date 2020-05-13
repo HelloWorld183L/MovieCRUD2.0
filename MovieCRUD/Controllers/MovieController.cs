@@ -1,11 +1,10 @@
 ﻿using AutoMapper;
-using MovieCRUD.Contracts.V1.Requests;
-using MovieCRUD.Contracts.V1.Requests.Queries;
-using MovieCRUD.Contracts.V1.Responses;
 using MovieCRUD.DTOs;
 using MovieCRUD.Infrastructure.Logging;
-using MovieCRUD.Infrastructure.Network;
-using MovieCRUD.Infrastructure.Network.v1.Interfaces;
+using MovieCRUD.Movies.Clients;
+using MovieCRUD.Movies.Requests;
+using MovieCRUD.Movies.Responses;
+using MovieCRUD.SharedKernel;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Mvc;

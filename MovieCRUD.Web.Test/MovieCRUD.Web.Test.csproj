@@ -121,13 +121,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MovieCRUD.Contracts\MovieCRUD.Contracts.csproj">
-      <Project>{aa9c8a9d-aacc-457e-a199-8e11273e966a}</Project>
-      <Name>MovieCRUD.Contracts</Name>
+    <ProjectReference Include="..\MovieCRUD.Api\MovieCRUD.Movies.csproj">
+      <Project>{08DAC1F4-AF18-4B8A-8CB3-303966E397E2}</Project>
+      <Name>MovieCRUD.Movies</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MovieCRUD.Infrastructure\MovieCRUD.Infrastructure.csproj">
-      <Project>{85c5dbb8-0d18-4fac-a76c-b49ccf8c9ba0}</Project>
-      <Name>MovieCRUD.Infrastructure</Name>
+    <ProjectReference Include="..\MovieCRUD.Infrastructure.Logging\MovieCRUD.Infrastructure.Logging.csproj">
+      <Project>{6BAE797A-E601-496D-A840-11CA37D57231}</Project>
+      <Name>MovieCRUD.Infrastructure.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MovieCRUD.SharedKernel2\MovieCRUD.SharedKernel.csproj">
+      <Project>{E7651BDF-F497-4528-AE0E-929325528AC0}</Project>
+      <Name>MovieCRUD.SharedKernel</Name>
     </ProjectReference>
     <ProjectReference Include="..\MovieCRUD\MovieCRUD.Web.csproj">
       <Project>{bd94a419-6fde-4139-9187-26f40acbb9dc}</Project>

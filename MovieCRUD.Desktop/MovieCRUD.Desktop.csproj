@@ -46,10 +46,13 @@
       <HintPath>..\packages\AutoMapper.Extensions.Microsoft.DependencyInjection.7.0.0\lib\netstandard2.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.3.1.3\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=3.1.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.3.1.4\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=3.1.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.3.1.4\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.19\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
@@ -115,9 +118,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Configuration\AutoBootstrapper.cs" />
+    <Compile Include="Configuration\IoCBootstrapper.cs" />
     <Compile Include="Configuration\Bootstrapper.cs" />
-    <Compile Include="Enums\Rating.cs" />
     <Compile Include="MappingProfiles\DTORequestProfile.cs" />
     <Compile Include="MappingProfiles\DTOResponseProfile.cs" />
     <Compile Include="Models\Commands\Command.cs" />
@@ -217,17 +219,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MovieCRUD.Api\MovieCRUD.Api.csproj">
-      <Project>{08DAC1F4-AF18-4B8A-8CB3-303966E397E2}</Project>
-      <Name>MovieCRUD.Api</Name>
+    <ProjectReference Include="..\MovieCRUD.Api\MovieCRUD.Movies.csproj">
+      <Project>{08dac1f4-af18-4b8a-8cb3-303966e397e2}</Project>
+      <Name>MovieCRUD.Movies</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MovieCRUD.Contracts\MovieCRUD.Contracts.csproj">
-      <Project>{aa9c8a9d-aacc-457e-a199-8e11273e966a}</Project>
-      <Name>MovieCRUD.Contracts</Name>
+    <ProjectReference Include="..\MovieCRUD.Infrastructure.Logging\MovieCRUD.Infrastructure.Logging.csproj">
+      <Project>{6BAE797A-E601-496D-A840-11CA37D57231}</Project>
+      <Name>MovieCRUD.Infrastructure.Logging</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MovieCRUD.Infrastructure\MovieCRUD.Infrastructure.csproj">
-      <Project>{85C5DBB8-0D18-4FAC-A76C-B49CCF8C9BA0}</Project>
-      <Name>MovieCRUD.Infrastructure</Name>
+    <ProjectReference Include="..\MovieCRUD.SharedKernel2\MovieCRUD.SharedKernel.csproj">
+      <Project>{E7651BDF-F497-4528-AE0E-929325528AC0}</Project>
+      <Name>MovieCRUD.SharedKernel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

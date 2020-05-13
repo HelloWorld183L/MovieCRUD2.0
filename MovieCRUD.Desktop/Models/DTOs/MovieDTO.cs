@@ -1,4 +1,4 @@
-﻿using MovieCRUD.Desktop.Enums;
+﻿using MovieCRUD.SharedKernel;
 
 namespace MovieCRUD.Desktop.Models.DTOs
 {

@@ -1,12 +1,11 @@
 ﻿using AutoMapper;
 using Moq;
-using MovieCRUD.Contracts.V1.Responses;
 using MovieCRUD.Desktop.Models.DTOs;
 using MovieCRUD.Desktop.Tests.TestData;
 using MovieCRUD.Desktop.ViewModels;
 using MovieCRUD.Infrastructure.Logging;
-using MovieCRUD.Infrastructure.Network;
-using MovieCRUD.Infrastructure.Network.v1.Interfaces;
+using MovieCRUD.Movies.Clients;
+using MovieCRUD.Movies.Responses;
 using NUnit.Framework;
 using System.Collections.Generic;
 
@@ -37,7 +36,7 @@ namespace MovieCRUD.Desktop.Tests.Tests
                     Id = movieResponse.Id,
                     Name = movieResponse.Name,
                     Genre = movieResponse.Genre,
-                    Rating = (Enums.Rating)movieResponse.Rating
+                    Rating = movieResponse.Rating
                 };
 
                 _mockMapper.Setup(x => x.Map<MovieDTO>(movieResponse))

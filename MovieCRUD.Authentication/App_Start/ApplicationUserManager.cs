@@ -14,10 +14,7 @@ namespace MovieCRUD.Authentication
 {
     public class ApplicationUserManager : UserManager<UserDTO>
     {
-        public ApplicationUserManager(IUserStore<UserDTO> userStore)
-            : base(userStore)
-        {
-        }
+        public ApplicationUserManager(IUserStore<UserDTO> userStore) : base(userStore) { }
 
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> identityFactoryOptions, IOwinContext context)
         {

@@ -1,9 +1,10 @@
 ﻿using AutoMapper;
-using MovieCRUD.Contracts.V1.Responses;
 using MovieCRUD.Domain;
+using MovieCRUD.Domain.Movies;
+using MovieCRUD.Movies.Responses;
 using System.Collections.Generic;
 
-namespace MovieCRUD.Api.Tests.MappingProfiles
+namespace MovieCRUD.Movies.Tests.MappingProfiles
 {
     public class DomainResponseProfile : Profile
     {
