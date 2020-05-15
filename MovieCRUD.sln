@@ -3,21 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.Web", "MovieCRUD\MovieCRUD.Web.csproj", "{BD94A419-6FDE-4139-9187-26F40ACBB9DC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.Web", "src\Clients\MovieCRUD.Web\MovieCRUD.Web.csproj", "{BD94A419-6FDE-4139-9187-26F40ACBB9DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.Desktop", "MovieCRUD.Desktop\MovieCRUD.Desktop.csproj", "{FDF3554F-B877-46E7-A8F3-F18656A6199A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.Desktop", "src\Clients\MovieCRUD.Desktop\MovieCRUD.Desktop.csproj", "{FDF3554F-B877-46E7-A8F3-F18656A6199A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.Movies", "MovieCRUD.Api\MovieCRUD.Movies.csproj", "{08DAC1F4-AF18-4B8A-8CB3-303966E397E2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.Movies", "src\Movies\MovieCRUD.Movies\MovieCRUD.Movies.csproj", "{08DAC1F4-AF18-4B8A-8CB3-303966E397E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.Authentication", "MovieCRUD.Authentication\MovieCRUD.Authentication.csproj", "{09CF7AE7-E54C-4F7A-982E-B36DD66F5A4C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.Authentication", "src\Authentication\MovieCRUD.Authentication\MovieCRUD.Authentication.csproj", "{09CF7AE7-E54C-4F7A-982E-B36DD66F5A4C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0BB09F2D-0E09-410C-8403-3C0E970AA0AA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5CB8D573-1014-4527-994A-AF92BDE71C30}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieCRUD.Desktop.Tests", "MovieCRUD.Desktop.Tests\MovieCRUD.Desktop.Tests.csproj", "{F48657A8-934B-484C-9317-E21F6F2C3C3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieCRUD.Desktop.Tests", "tests\ClientTests\MovieCRUD.Desktop.Tests\MovieCRUD.Desktop.Tests.csproj", "{F48657A8-934B-484C-9317-E21F6F2C3C3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.Web.Test", "MovieCRUD.Web.Test\MovieCRUD.Web.Test.csproj", "{331A99AE-D5AE-4A26-BAA4-2C0D424566E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.Web.Test", "tests\ClientTests\MovieCRUD.Web.Test\MovieCRUD.Web.Test.csproj", "{331A99AE-D5AE-4A26-BAA4-2C0D424566E9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Movies", "Movies", "{B17CBA16-408F-417F-A6D9-5A5918550FEA}"
 EndProject
@@ -25,27 +25,32 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Authentication", "Authentic
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{FB3B7D86-832B-4112-8306-9B7089509483}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.SharedKernel", "MovieCRUD.SharedKernel2\MovieCRUD.SharedKernel.csproj", "{E7651BDF-F497-4528-AE0E-929325528AC0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.SharedKernel", "src\MovieCRUD.SharedKernel\MovieCRUD.SharedKernel.csproj", "{E7651BDF-F497-4528-AE0E-929325528AC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.Domain.Authentication", "MovieCRUD.Domain.Authentication2\MovieCRUD.Domain.Authentication.csproj", "{B6DAE6FF-2909-4940-AAD8-F659CCD3CF77}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.Domain.Authentication", "src\Authentication\MovieCRUD.Domain.Authentication\MovieCRUD.Domain.Authentication.csproj", "{B6DAE6FF-2909-4940-AAD8-F659CCD3CF77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.Domain.Movies", "MovieCRUD.Domain.Movies2\MovieCRUD.Domain.Movies.csproj", "{231DF889-FC75-4E8E-9988-F2BDABE7FB0A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.Domain.Movies", "src\Movies\MovieCRUD.Domain.Movies\MovieCRUD.Domain.Movies.csproj", "{231DF889-FC75-4E8E-9988-F2BDABE7FB0A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{F817210E-C321-4423-A92B-7D2401FD889E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.Infrastructure.Persistence", "MovieCRUD.Infrastructure.Persistence\MovieCRUD.Infrastructure.Persistence.csproj", "{9BDD3FBB-9269-4620-A42E-6F3A3D14CD62}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.Infrastructure.Persistence", "src\Infrastructure\MovieCRUD.Infrastructure.Persistence\MovieCRUD.Infrastructure.Persistence.csproj", "{9BDD3FBB-9269-4620-A42E-6F3A3D14CD62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.Infrastructure.Logging", "MovieCRUD.Infrastructure.Logging\MovieCRUD.Infrastructure.Logging.csproj", "{6BAE797A-E601-496D-A840-11CA37D57231}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.Infrastructure.Logging", "src\Infrastructure\MovieCRUD.Infrastructure.Logging\MovieCRUD.Infrastructure.Logging.csproj", "{6BAE797A-E601-496D-A840-11CA37D57231}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.Infrastructure.InversionOfControl", "MovieCRUD.Infrastructure.InversionOfControl\MovieCRUD.Infrastructure.InversionOfControl.csproj", "{EABB8D3F-9BCB-4925-A0EB-C193C0717448}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.Infrastructure.InversionOfControl", "src\Infrastructure\MovieCRUD.Infrastructure.InversionOfControl\MovieCRUD.Infrastructure.InversionOfControl.csproj", "{EABB8D3F-9BCB-4925-A0EB-C193C0717448}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClientTests", "ClientTests", "{78AFEFA9-060C-406D-B12A-CB6855FFA24E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InfrastructureTests", "InfrastructureTests", "{A8D77FA3-B664-41A3-A494-9879D26F2E1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.Infrastructure.Persistence.Tests", "MovieCRUD.Infrastructure.Persistence.Test\MovieCRUD.Infrastructure.Persistence.Tests.csproj", "{FAEA7941-7853-4435-8D55-DABFC3FA8E9F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.Infrastructure.Persistence.Tests", "tests\InfrastructureTests\MovieCRUD.Infrastructure.Persistence.Test\MovieCRUD.Infrastructure.Persistence.Tests.csproj", "{FAEA7941-7853-4435-8D55-DABFC3FA8E9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.Movies.Test", "MovieCRUD.Movies.Test\MovieCRUD.Movies.Test.csproj", "{F09B3662-0A89-478F-A965-900F7AE173D5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.Movies.Test", "tests\MovieTests\MovieCRUD.Movies.Test\MovieCRUD.Movies.Test.csproj", "{F09B3662-0A89-478F-A965-900F7AE173D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{68CFAF67-6706-4A28-A6A6-BED2CDF40F34}"
+	ProjectSection(SolutionItems) = preProject
+		NuGet.config = NuGet.config
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
