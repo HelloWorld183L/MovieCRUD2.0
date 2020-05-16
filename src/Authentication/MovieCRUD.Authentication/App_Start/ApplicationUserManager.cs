@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using MovieCRUD.Authentication.Models.IdentityModels;
@@ -12,13 +11,13 @@ using System.Threading.Tasks;
 
 namespace MovieCRUD.Authentication
 {
-    public class ApplicationUserManager : UserManager<UserDTO>
+    public class ApplicationUserManager : UserManager<UserDTO, int>
     {
-        public ApplicationUserManager(IUserStore<UserDTO> userStore) : base(userStore) { }
+        public ApplicationUserManager(IUserStore<UserDTO, int> userStore) : base(userStore) { }
 
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> identityFactoryOptions, IOwinContext context)
         {
-            var userStore = new UserStore<UserDTO>(context.Get<ApplicationDbContext>());
+            var userStore = new UserStore<UserDTO, int>(context.Get<ApplicationDbContext>());
 
             var userManager = new ApplicationUserManager(userStore);
 
@@ -27,14 +26,14 @@ namespace MovieCRUD.Authentication
             var dataProtectionProvider = identityFactoryOptions.DataProtectionProvider;
             if (dataProtectionProvider != null)
             {
-                userManager.UserTokenProvider = new DataProtectorTokenProvider<UserDTO>(dataProtectionProvider.Create("ASP.NET Identity"));
+                userManager.UserTokenProvider = new DataProtectorTokenProvider<UserDTO, int>(dataProtectionProvider.Create("ASP.NET Identity"));
             }
             return userManager;
         }
 
         private static void ConfigureValidation(ApplicationUserManager userManager)
         {
-            userManager.UserValidator = new UserValidator<UserDTO>(userManager)
+            userManager.UserValidator = new UserValidator<UserDTO, int>(userManager)
             {
                 AllowOnlyAlphanumericUserNames = false,
                 RequireUniqueEmail = true
