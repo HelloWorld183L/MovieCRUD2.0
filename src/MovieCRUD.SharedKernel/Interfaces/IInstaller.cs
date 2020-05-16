@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace MovieCRUD.Infrastructure.InversionOfControl.Installers.Interfaces
+namespace MovieCRUD.SharedKernel
 {
     public interface IInstaller
     {
