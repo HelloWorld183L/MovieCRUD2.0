@@ -1,4 +1,4 @@
-﻿using MovieCRUD.Infrastructure.InversionOfControl.Installers.Interfaces;
+﻿using MovieCRUD.SharedKernel;
 using System;
 using System.Linq;
 using System.Reflection;
