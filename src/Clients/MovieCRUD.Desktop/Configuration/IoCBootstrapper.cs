@@ -33,8 +33,10 @@ namespace MovieCRUD.Desktop.Configuration
 
         protected virtual void ConfigureIoC(IServiceCollection services) 
         {
-            services.InstallTypesInAssembly();
-            services.AddAutoMapper(this.GetType().Assembly);
+            var executingAssembly = Assembly.GetExecutingAssembly();
+
+            services.InstallTypesInAssembly(executingAssembly);
+            services.AddAutoMapper(executingAssembly);
         }
 
         public override object GetInstance(Type serviceType) => serviceProvider.GetService(serviceType);
