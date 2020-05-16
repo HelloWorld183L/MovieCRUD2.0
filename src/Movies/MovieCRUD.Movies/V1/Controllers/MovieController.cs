@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Web.Http;
 using MovieCRUD.Movies.Requests;
 using MovieCRUD.Movies.Responses;
-using MovieCRUD.Movies.V1;
 using MovieCRUD.SharedKernel;
 using MovieCRUD.Domain.Movies;
 using MovieCRUD.Movies.Requests.Queries;
