@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
 using MovieCRUD.Web;
+using System.Reflection;
 
 namespace MovieCRUD.App_Start
 {
@@ -9,7 +10,9 @@ namespace MovieCRUD.App_Start
         public static void RegisterContainer()
         {
             IServiceCollection services = new ServiceCollection();
-            services.InstallTypesInAssembly();
+
+            var executingAssembly = Assembly.GetExecutingAssembly();
+            services.InstallTypesInAssembly(executingAssembly);
             services.AddAutoMapper(typeof(ContainerConfig).Assembly);
         }
     }
