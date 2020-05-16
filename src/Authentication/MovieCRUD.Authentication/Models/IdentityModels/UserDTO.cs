@@ -1,18 +1,14 @@
 ﻿using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using System.Security.Claims;
-using System.Threading.Tasks;
+using MovieCRUD.Domain.Authentication.ValueObjects;
+using System.Collections.Generic;
 
 namespace MovieCRUD.Authentication.Models.IdentityModels
 {
-    public class UserDTO : IdentityUser
+    public class UserDTO : IUser<int>
     {
-        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<UserDTO> manager, string authenticationType)
-        {
-            // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
-            var userIdentity = await manager.CreateIdentityAsync(this, authenticationType);
-            // Add custom user claims here
-            return userIdentity;
-        }
+        public int Id { get; set; }
+        public string UserName { get; set; }
+        public string PasswordHash { get; set; }
+        public ICollection<UserLoginData> Logins { get; set; }
     }
 }
