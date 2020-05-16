@@ -7,8 +7,8 @@
     <ProjectGuid>{E7651BDF-F497-4528-AE0E-929325528AC0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MovieCRUD.SharedKernel2</RootNamespace>
-    <AssemblyName>MovieCRUD.SharedKernel2</AssemblyName>
+    <RootNamespace>MovieCRUD.SharedKernel</RootNamespace>
+    <AssemblyName>MovieCRUD.SharedKernel</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -68,6 +68,7 @@
     <Compile Include="Interfaces\IAggregate.cs" />
     <Compile Include="Interfaces\IEntity.cs" />
     <Compile Include="Interfaces\IInstaller.cs" />
+    <Compile Include="Interfaces\INamedEntity.cs" />
     <Compile Include="PaginationFilter.cs" />
     <Compile Include="PaginationQuery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

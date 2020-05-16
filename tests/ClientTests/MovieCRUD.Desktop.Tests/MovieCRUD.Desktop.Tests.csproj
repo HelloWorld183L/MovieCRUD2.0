@@ -11,7 +11,6 @@
     <PackageReference Include="Moq" Version="4.14.1" />
     <PackageReference Include="nunit" Version="3.12.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.15.1" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
     <PackageReference Include="Stylet" Version="1.3.2" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
   </ItemGroup>
@@ -19,6 +18,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\src\Clients\MovieCRUD.Desktop\MovieCRUD.Desktop.csproj" />
     <ProjectReference Include="..\..\..\src\Infrastructure\MovieCRUD.Infrastructure.Logging\MovieCRUD.Infrastructure.Logging.csproj" />
+    <ProjectReference Include="..\..\..\src\MovieCRUD.SharedKernel\MovieCRUD.SharedKernel.csproj" />
     <ProjectReference Include="..\..\..\src\Movies\MovieCRUD.Movies\MovieCRUD.Movies.csproj" />
   </ItemGroup>
 
