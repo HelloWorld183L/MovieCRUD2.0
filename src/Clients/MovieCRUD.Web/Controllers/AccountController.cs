@@ -191,8 +191,6 @@ namespace MovieCRUD.Controllers
             if (!ModelState.IsValid) return View();
 
             var result = await _apiClient.SendTwoFactorAsync(sendCodeModel.SelectedProvider);
-
-            // Generate the token and send it
             if (!result.Succeeded) return View("Error");
 
             return RedirectToAction("VerifyCode", new { Provider = sendCodeModel.SelectedProvider, ReturnUrl = sendCodeModel.ReturnUrl, RememberMe = sendCodeModel.RememberMe });
@@ -203,10 +201,7 @@ namespace MovieCRUD.Controllers
         public async Task<ActionResult> ExternalLoginCallback(string returnUrl)
         {
             var loginInfo = await _apiClient.GetExternalLoginInfoAsync();
-
             if (loginInfo == null) return RedirectToAction("Login");
-
-            // Sign in the user with this external login provider if the user already has a login
 
             var externalSignInRequest = new ExternalSignInRequest()
             {
@@ -225,7 +220,6 @@ namespace MovieCRUD.Controllers
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = false });
                 case SignInStatus.Failure:
                 default:
-                    // If the user does not have an account, then prompt the user to create an account
                     ViewBag.ReturnUrl = returnUrl;
                     ViewBag.LoginProvider = loginInfo.Login.LoginProvider;
                     return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { Email = loginInfo.Email });
@@ -241,7 +235,6 @@ namespace MovieCRUD.Controllers
             if (!ModelState.IsValid) return View(model);
 
             var loginInfo = await _apiClient.GetExternalLoginInfoAsync();
-
             if (loginInfo == null) return View("ExternalLoginFailure");
 
             ViewBag.ReturnUrl = returnUrl;
