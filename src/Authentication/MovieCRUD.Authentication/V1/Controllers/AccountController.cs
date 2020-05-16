@@ -27,12 +27,12 @@ namespace MovieCRUD.Authentication.Controllers
     {
         public ISecureDataFormat<AuthenticationTicket> AccessTokenFormat { get; private set; }
         private const string LocalLoginProvider = "Local";
-        private IUserRepository _userRepo;
+        private UserManager<UserDTO, int> _userManager;
         private IMapper _mapper;
 
-        public AccountController(IUserRepository userRepository, IMapper mapper)
+        public AccountController(UserManager<UserDTO, int> userManager, IMapper mapper)
         {
-            _userRepo = userRepository;
+            _userManager = userManager;
             _mapper = mapper;
         }
 
@@ -60,14 +60,12 @@ namespace MovieCRUD.Authentication.Controllers
         [Route(AccountRoutes.GetManageInfo)]
         public async Task<ManageInfoResponse> GetManageInfo(string returnUrl, bool generateState = false)
         {
-            var user = await _userRepo.GetUserByIdAsync(User.Identity.GetUserId());
+            var user = await _userManager.FindByIdAsync(GetUserId());
+            if (user == null) return null;
 
             var mappedUser = _mapper.Map<UserDTO>(user);
 
-            if (user == null) return null;
-
             var logins = new List<UserLoginInfoViewModel>();
-
             foreach (var linkedAccount in mappedUser.Logins)
             {
                 logins.Add(new UserLoginInfoViewModel
@@ -82,7 +80,7 @@ namespace MovieCRUD.Authentication.Controllers
                 logins.Add(new UserLoginInfoViewModel
                 {
                     LoginProvider = LocalLoginProvider,
-                    ProviderKey = user.Username,
+                    ProviderKey = user.UserName,
                 });
             }
 
@@ -100,15 +98,12 @@ namespace MovieCRUD.Authentication.Controllers
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            var changePasswordResult = await _userRepo.ChangePasswordAsync(
-                User.Identity.GetUserId(),
+            var changePasswordResult = await _userManager.ChangePasswordAsync(
+                GetUserId(),
                 changePasswordModel.OldPassword,
                 changePasswordModel.NewPassword);
             
-            if (!changePasswordResult.Succeeded)
-            {
-                return GetErrorResult(changePasswordResult);
-            }
+            if (!changePasswordResult.Succeeded) return GetErrorResult(changePasswordResult);
 
             return Ok();
         }
@@ -118,7 +113,7 @@ namespace MovieCRUD.Authentication.Controllers
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            var setPasswordResult = await _userRepo.AddPasswordAsync(User.Identity.GetUserId(), passwordRequest.NewPassword);
+            var setPasswordResult = await _userManager.AddPasswordAsync(GetUserId(), passwordRequest.NewPassword);
 
             if (!setPasswordResult.Succeeded) return GetErrorResult(setPasswordResult);
 
@@ -128,12 +123,11 @@ namespace MovieCRUD.Authentication.Controllers
         [Route(AccountRoutes.AddExternalLogin)]
         public async Task<IHttpActionResult> AddExternalLogin(AddExternalLoginRequest externalLoginRequest)
         {
-            if (!ModelState.IsValid) { return BadRequest(ModelState); }
+            if (!ModelState.IsValid) return BadRequest(ModelState);
 
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ExternalCookie);
 
             var authTicket = AccessTokenFormat.Unprotect(externalLoginRequest.ExternalAccessToken);
-
             if (authTicket == null || authTicket.Identity == null || (authTicket.Properties != null
                 && authTicket.Properties.ExpiresUtc.HasValue
                 && authTicket.Properties.ExpiresUtc.Value < DateTimeOffset.UtcNow))
@@ -142,12 +136,10 @@ namespace MovieCRUD.Authentication.Controllers
             }
 
             var externalData = ExternalLoginData.FromIdentity(authTicket.Identity);
-
             if (externalData == null) return BadRequest("The external login is already associated with an account.");
 
-            var addLoginResult = await _userRepo.AddLoginAsync(User.Identity.GetUserId(),
+            var addLoginResult = await _userManager.AddLoginAsync(GetUserId(),
                 new UserLoginInfo(externalData.LoginProvider, externalData.ProviderKey));
-
             if (!addLoginResult.Succeeded) return GetErrorResult(addLoginResult);
 
             return Ok();
@@ -159,14 +151,13 @@ namespace MovieCRUD.Authentication.Controllers
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
             IdentityResult loginProviderResult;
-
             if (removeLoginRequest.LoginProvider == LocalLoginProvider)
             {
-                loginProviderResult = await _userRepo.RemovePasswordAsync(User.Identity.GetUserId());
+                loginProviderResult = await _userManager.RemovePasswordAsync(GetUserId());
             }
             else
             {
-                loginProviderResult = await _userRepo.RemoveLoginAsync(User.Identity.GetUserId(),
+                loginProviderResult = await _userManager.RemoveLoginAsync(GetUserId(),
                     new UserLoginInfo(removeLoginRequest.LoginProvider, removeLoginRequest.ProviderKey));
             }
 
@@ -185,7 +176,6 @@ namespace MovieCRUD.Authentication.Controllers
             if (!User.Identity.IsAuthenticated) return new ChallengeResult(provider, this);
 
             var externalLoginData = ExternalLoginData.FromIdentity(User.Identity as ClaimsIdentity);
-
             if (externalLoginData == null) return InternalServerError();
 
             if (externalLoginData.LoginProvider != provider)
@@ -197,8 +187,7 @@ namespace MovieCRUD.Authentication.Controllers
             var externalLogin = ExternalLoginData.FromIdentity(User.Identity as ClaimsIdentity);
             if (externalLogin == null) return InternalServerError();
 
-            var user = await _userRepo.GetExternalUserAsync(new UserLoginInfo(externalLogin.LoginProvider, externalLogin.ProviderKey));
-
+            var user = await _userManager.FindAsync(new UserLoginInfo(externalLogin.LoginProvider, externalLogin.ProviderKey));
             var hasRegistered = user != null;
 
             var redirectUri = string.Empty;
@@ -212,7 +201,7 @@ namespace MovieCRUD.Authentication.Controllers
 
         [AllowAnonymous]
         [Route(AccountRoutes.GetExternalLogins)]
-        public IEnumerable<ViewModels.ExternalLoginViewModel> GetExternalLogins(string returnUrl, bool generateState = false)
+        public IEnumerable<ExternalLoginViewModel> GetExternalLogins(string returnUrl, bool generateState = false)
         {
             var authDescriptions = AuthenticationManager.GetExternalAuthenticationTypes();
             var externalLoginViewModels = new List<ExternalLoginViewModel>();
@@ -227,7 +216,7 @@ namespace MovieCRUD.Authentication.Controllers
 
             foreach (var authDescription in authDescriptions)
             {
-                var externalLoginViewModel = new ViewModels.ExternalLoginViewModel
+                var externalLoginViewModel = new ExternalLoginViewModel
                 {
                     Name = authDescription.Caption,
                     Url = Url.Route("ExternalLogin", new
@@ -252,9 +241,9 @@ namespace MovieCRUD.Authentication.Controllers
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            var user = new User { Username = registerRequest.Email, Password = registerRequest.Password };
+            var user = _mapper.Map<UserDTO>(registerRequest);
 
-            var registerUserResult = await _userRepo.RegisterUserAsync(user);
+            var registerUserResult = await _userManager.CreateAsync(user, registerRequest.Password);
 
             if (!registerUserResult.Succeeded) return GetErrorResult(registerUserResult);
 
@@ -269,17 +258,14 @@ namespace MovieCRUD.Authentication.Controllers
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
             var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync();
-            if (loginInfo == null) 
-            {
-                return InternalServerError();
-            }
+            if (loginInfo == null) return InternalServerError();
 
-            var user = _mapper.Map<User>(registerExternalRequest);
+            var user = _mapper.Map<UserDTO>(registerExternalRequest);
 
-            var createUserResult = await _userRepo.RegisterUserAsync(user);
+            var createUserResult = await _userManager.RegisterUserAsync(user);
             if (!createUserResult.Succeeded) return GetErrorResult(createUserResult);
 
-            var addLoginResult = await _userRepo.AddLoginAsync(user.Id.ToString(), loginInfo.Login);
+            var addLoginResult = await _userManager.AddLoginAsync(user.Id, loginInfo.Login);
             if (!addLoginResult.Succeeded) return GetErrorResult(createUserResult);
 
             return Ok();
@@ -315,6 +301,12 @@ namespace MovieCRUD.Authentication.Controllers
             }
 
             return null;
+        }
+
+        private int GetUserId()
+        {
+            var parsedId = int.Parse(User.Identity.GetUserId());
+            return parsedId;
         }
         #endregion
     }
