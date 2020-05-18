@@ -1,5 +1,4 @@
 ﻿using MovieCRUD.Domain.Authentication;
-using MovieCRUD.Domain.Authentication.ValueObjects;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
