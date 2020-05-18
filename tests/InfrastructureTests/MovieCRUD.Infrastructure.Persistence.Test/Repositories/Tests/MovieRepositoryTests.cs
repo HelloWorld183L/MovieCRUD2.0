@@ -97,8 +97,8 @@ namespace MovieCRUD.Infrastructure.Tests.Persistence.Repositories
                 new MovieEntity
                 {
                     Id = 2,
-                    Name = "Diarrhoea: The Movie",
-                    Genre = "Shittastrophy",
+                    Name = "Captain America: Winter Soldier",
+                    Genre = "Superhero",
                     Rating = Rating.Terrible
                 },
                 new MovieEntity
