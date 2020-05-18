@@ -1,26 +1,28 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using AutoMapper;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using MovieCRUD.Authentication.Models.IdentityModels;
-using MovieCRUD.Infrastructure;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MovieCRUD.Authentication.Stores;
+using MovieCRUD.Infrastructure.Persistence.Interfaces;
 
 namespace MovieCRUD.Authentication
 {
     public class ApplicationUserManager : UserManager<UserDTO, int>
     {
-        public ApplicationUserManager(IUserStore<UserDTO, int> userStore) : base(userStore) { }
+        private static IMapper _mapper;
+        private static IUserRepository _userRepo;
+
+        public ApplicationUserManager(IUserStore<UserDTO, int> userStore, IMapper mapper, IUserRepository userRepository) : base(userStore) 
+        {
+            _mapper = mapper;
+            _userRepo = userRepository;
+        }
 
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> identityFactoryOptions, IOwinContext context)
         {
-            var userStore = new UserStore<UserDTO, int>(context.Get<ApplicationDbContext>());
-
-            var userManager = new ApplicationUserManager(userStore);
-
+            var userStore = new UserStore(_userRepo, _mapper);
+            var userManager = new ApplicationUserManager(userStore, _mapper, _userRepo);
             ConfigureValidation(userManager);
 
             var dataProtectionProvider = identityFactoryOptions.DataProtectionProvider;
