@@ -1,10 +1,9 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
-using MovieCRUD.Infrastructure.Persistence.Entities;
+﻿using MovieCRUD.Infrastructure.Persistence.Entities;
 using System.Data.Entity;
 
 namespace MovieCRUD.Infrastructure
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : DbContext
     {
         public DbSet<MovieEntity> Movies { get; set; }
 
