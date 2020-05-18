@@ -10,7 +10,7 @@ namespace MovieCRUD.Domain.Authentication
         public string PasswordHash { get; set; }
         public string PhoneNumber { get; set; }
 
-        public ICollection<UserLoginData> Logins;
+        public ICollection<UserLoginData> Logins { get; set; }
         public ICollection<Claim> Claims { get; set; }
     }
 }

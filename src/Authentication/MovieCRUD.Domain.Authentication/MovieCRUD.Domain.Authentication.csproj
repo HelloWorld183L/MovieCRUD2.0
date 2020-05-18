@@ -43,8 +43,8 @@
   <ItemGroup>
     <Compile Include="Entities\Claim.cs" />
     <Compile Include="Entities\User.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\UserLoginData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\MovieCRUD.SharedKernel\MovieCRUD.SharedKernel.csproj">

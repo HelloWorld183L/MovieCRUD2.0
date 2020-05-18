@@ -85,10 +85,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\MovieCRUD.SharedKernel\MovieCRUD.SharedKernel.csproj">
-      <Project>{e7651bdf-f497-4528-ae0e-929325528ac0}</Project>
-      <Name>MovieCRUD.SharedKernel</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\src\Movies\MovieCRUD.Movies\MovieCRUD.Movies.csproj">
       <Project>{08DAC1F4-AF18-4B8A-8CB3-303966E397E2}</Project>
       <Name>MovieCRUD.Movies</Name>
@@ -100,6 +96,10 @@
     <ProjectReference Include="..\..\..\src\Infrastructure\MovieCRUD.Infrastructure.Persistence\MovieCRUD.Infrastructure.Persistence.csproj">
       <Project>{9BDD3FBB-9269-4620-A42E-6F3A3D14CD62}</Project>
       <Name>MovieCRUD.Infrastructure.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\MovieCRUD.SharedKernel\MovieCRUD.SharedKernel.csproj">
+      <Project>{E7651BDF-F497-4528-AE0E-929325528AC0}</Project>
+      <Name>MovieCRUD.SharedKernel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
