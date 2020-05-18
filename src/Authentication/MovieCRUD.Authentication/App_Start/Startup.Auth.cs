@@ -18,7 +18,7 @@ namespace MovieCRUD.Authentication
         // For more information on configuring authentication, please visit https://go.microsoft.com/fwlink/?LinkId=301864
         public void ConfigureAuth(IAppBuilder appBuilder)
         {
-            appBuilder.CreatePerOwinContext(() => new ApplicationDbContext());
+            appBuilder.CreatePerOwinContext<ApplicationDbContext>(() => new ApplicationDbContext());
             appBuilder.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
 
             appBuilder.UseCookieAuthentication(new CookieAuthenticationOptions());

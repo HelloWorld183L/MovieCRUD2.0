@@ -1,11 +1,14 @@
-﻿using MovieCRUD.Infrastructure.Persistence.Entities;
+﻿using MovieCRUD.Domain.Authentication;
+using MovieCRUD.Infrastructure.Persistence.Entities;
+using System;
 using System.Data.Entity;
 
 namespace MovieCRUD.Infrastructure
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : DbContext, IDisposable
     {
         public DbSet<MovieEntity> Movies { get; set; }
+        public DbSet<UserLoginData> UserLoginData { get; set; }
 
         public ApplicationDbContext() : base("ApplicationDb")
         {

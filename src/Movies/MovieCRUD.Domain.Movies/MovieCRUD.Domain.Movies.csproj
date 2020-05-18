@@ -47,13 +47,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\MovieCRUD.SharedKernel\MovieCRUD.SharedKernel.csproj">
-      <Project>{E7651BDF-F497-4528-AE0E-929325528AC0}</Project>
-      <Name>MovieCRUD.SharedKernel</Name>
-    </ProjectReference>
+    <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <ProjectReference Include="..\..\MovieCRUD.SharedKernel\MovieCRUD.SharedKernel.csproj">
+      <Project>{e7651bdf-f497-4528-ae0e-929325528ac0}</Project>
+      <Name>MovieCRUD.SharedKernel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

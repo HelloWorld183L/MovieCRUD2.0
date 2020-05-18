@@ -1,5 +1,4 @@
-﻿using MovieCRUD.Domain.Authentication.ValueObjects;
-using MovieCRUD.SharedKernel;
+﻿using MovieCRUD.SharedKernel;
 using System.Collections.Generic;
 
 namespace MovieCRUD.Domain.Authentication
