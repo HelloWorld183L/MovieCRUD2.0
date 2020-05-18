@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
-using MovieCRUD.Domain.Authentication.ValueObjects;
+using MovieCRUD.Domain.Authentication;
 using System.Collections.Generic;
 
 namespace MovieCRUD.Authentication.Models.IdentityModels
