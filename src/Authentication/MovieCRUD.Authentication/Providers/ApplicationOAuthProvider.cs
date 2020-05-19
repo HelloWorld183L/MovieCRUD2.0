@@ -22,7 +22,6 @@ namespace MovieCRUD.Authentication.Providers
             var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
 
             var user = await userManager.FindAsync(context.UserName, context.Password);
-
             if (user == null)
             {
                 context.SetError("invalid_grant", "The user name or password is incorrect.");
