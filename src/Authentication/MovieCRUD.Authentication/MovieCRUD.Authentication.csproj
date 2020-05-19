@@ -315,6 +315,8 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Clients\AuthApiClient.cs" />
     <Compile Include="Clients\Interfaces\IAuthApiClient.cs" />
+    <Compile Include="MappingProfiles\ClaimProfile.cs" />
+    <Compile Include="MappingProfiles\LoginInfoProfile.cs" />
     <Compile Include="Notifications\Interfaces\ISmsService.cs" />
     <Compile Include="Notifications\Messages\EmailMessage.cs" />
     <Compile Include="Notifications\Messages\SmsMessage.cs" />
