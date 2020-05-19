@@ -1,13 +1,10 @@
 ﻿using AutoMapper;
 using MovieCRUD.Domain.Authentication;
-using MovieCRUD.Domain.Authentication.ValueObjects;
 using MovieCRUD.Infrastructure.Logging;
 using MovieCRUD.Infrastructure.Persistence.Interfaces;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
 using System.Threading.Tasks;
-using MovieCRUD.SharedKernel;
 
 namespace MovieCRUD.Infrastructure.Persistence.Services
 {
