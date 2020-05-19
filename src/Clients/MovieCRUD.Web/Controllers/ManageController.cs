@@ -235,11 +235,7 @@ namespace MovieCRUD.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> RemovePhoneNumber()
         {
-            var request = new SetPhoneNumberRequest()
-            {
-                UserId = User.Identity.GetUserId(),
-                NewPhoneNumber = null
-            };
+            var request = new SetPhoneNumberRequest(User.Identity.GetUserId(), null);
 
             var result = await _apiClient.SetPhoneNumberAsync(request);
             if (!result.Succeeded) return RedirectToAction("Index", new { Message = ManageMessageId.Error });
