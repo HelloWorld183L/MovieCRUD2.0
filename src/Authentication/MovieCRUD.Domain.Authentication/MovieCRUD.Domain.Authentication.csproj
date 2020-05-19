@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="Entities\Claim.cs" />
     <Compile Include="Entities\User.cs" />
-    <Compile Include="Entities\UserLoginData.cs" />
+    <Compile Include="Entities\ExternalLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -9,6 +9,6 @@ namespace MovieCRUD.Authentication.Models.IdentityModels
         public int Id { get; set; }
         public string UserName { get; set; }
         public string PasswordHash { get; set; }
-        public ICollection<UserLoginData> Logins { get; set; }
+        public ICollection<ExternalLogin> Logins { get; set; }
     }
 }

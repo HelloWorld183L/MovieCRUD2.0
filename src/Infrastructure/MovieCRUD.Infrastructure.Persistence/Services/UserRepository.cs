@@ -17,7 +17,7 @@ namespace MovieCRUD.Infrastructure.Persistence.Services
             throw new System.NotImplementedException();
         }
 
-        public Task<IList<UserLoginData>> GetLoginsAsync(int userId)
+        public Task<IList<ExternalLogin>> GetLoginsAsync(int userId)
         {
             throw new System.NotImplementedException();
         }
@@ -27,7 +27,7 @@ namespace MovieCRUD.Infrastructure.Persistence.Services
             throw new System.NotImplementedException();
         }
 
-        public Task<User> GetUserByExternalLoginInfoAsync(UserLoginData loginInfo)
+        public Task<User> GetUserByExternalLoginInfoAsync(ExternalLogin loginInfo)
         {
             throw new System.NotImplementedException();
         }

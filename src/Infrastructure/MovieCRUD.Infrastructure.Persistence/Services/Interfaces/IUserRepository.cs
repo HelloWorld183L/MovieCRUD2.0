@@ -7,9 +7,9 @@ namespace MovieCRUD.Infrastructure.Persistence.Interfaces
     public interface IUserRepository : IRepository<User>
     {
         Task<User> GetUserByNameAsync(string userName);
-        Task<User> GetUserByExternalLoginInfoAsync(UserLoginData loginInfo);
+        Task<User> GetUserByExternalLoginInfoAsync(ExternalLogin loginInfo);
         Task<IList<Claim>> GetClaimsAsync(int userId);
-        Task<IList<UserLoginData>> GetLoginsAsync(int userId);
+        Task<IList<ExternalLogin>> GetLoginsAsync(int userId);
         Task GetPasswordHashAsync(int userId);
     }
 }

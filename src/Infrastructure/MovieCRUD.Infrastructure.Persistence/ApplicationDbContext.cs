@@ -8,8 +8,7 @@ namespace MovieCRUD.Infrastructure
     public class ApplicationDbContext : DbContext, IDisposable
     {
         public DbSet<MovieEntity> Movies { get; set; }
-        public DbSet<UserLoginData> LoginInfo { get; set; }
-
+        public DbSet<ExternalLogin> LoginInfo { get; set; }
 
         public ApplicationDbContext() : base("ApplicationDb")
         {
