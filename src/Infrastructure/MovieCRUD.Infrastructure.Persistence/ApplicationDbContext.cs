@@ -5,7 +5,7 @@ using System.Data.Entity;
 
 namespace MovieCRUD.Infrastructure
 {
-    public class ApplicationDbContext : DbContext, IDisposable
+    public class ApplicationDbContext : DbContext
     {
         public DbSet<MovieEntity> Movies { get; set; }
         public DbSet<ExternalLogin> LoginInfo { get; set; }
