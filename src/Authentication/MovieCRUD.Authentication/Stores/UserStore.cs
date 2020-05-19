@@ -1,15 +1,13 @@
 ﻿using AutoMapper;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using MovieCRUD.Authentication.Models.IdentityModels;
 using MovieCRUD.Domain.Authentication;
-using MovieCRUD.Infrastructure.Persistence;
 using MovieCRUD.Infrastructure.Persistence.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
-using System.Web.UI.WebControls;
+using Claim = System.Security.Claims.Claim;
 
 namespace MovieCRUD.Authentication.Stores
 {
@@ -72,7 +70,8 @@ namespace MovieCRUD.Authentication.Stores
             if (loginInfo == null)
                 throw new ArgumentNullException("loginInfo");
 
-            var user = await _userRepo.GetByExternalLoginInfoAsync(loginInfo.LoginProvider, loginInfo.ProviderKey);
+            var externalLoginInfo = _mapper.Map<ExternalLogin>(loginInfo);
+            var user = await _userRepo.GetUserByExternalLoginInfoAsync(externalLoginInfo);
             var mappedUser = _mapper.Map<UserDTO>(user);
 
             return mappedUser;
@@ -106,8 +105,9 @@ namespace MovieCRUD.Authentication.Stores
                 throw new ArgumentNullException("user");
 
             var claims = await _userRepo.GetClaimsAsync(user.Id);
+            var mappedClaims = _mapper.Map<IList<Claim>>(claims);
 
-            return claims;
+            return mappedClaims;
         }
 
         public async Task<IList<UserLoginInfo>> GetLoginsAsync(UserDTO user)
@@ -116,8 +116,9 @@ namespace MovieCRUD.Authentication.Stores
                 throw new ArgumentNullException("user");
 
             var userLogins = await _userRepo.GetLoginsAsync(user.Id);
+            var mappedInfo = _mapper.Map<IList<UserLoginInfo>>(userLogins);
 
-            return userLogins;
+            return mappedInfo;
         }
 
         public Task<string> GetPasswordHashAsync(UserDTO user)
