@@ -261,8 +261,7 @@ namespace MovieCRUD.Authentication.Controllers
             if (loginInfo == null) return InternalServerError();
 
             var user = _mapper.Map<UserDTO>(registerExternalRequest);
-
-            var createUserResult = await _userManager.RegisterUserAsync(user);
+            var createUserResult = await _userManager.CreateAsync(user);
             if (!createUserResult.Succeeded) return GetErrorResult(createUserResult);
 
             var addLoginResult = await _userManager.AddLoginAsync(user.Id, loginInfo.Login);
