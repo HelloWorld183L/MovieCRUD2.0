@@ -1,9 +1,10 @@
 ﻿using MovieCRUD.Infrastructure.Persistence.Entities;
+using System;
 using System.Data.Entity;
 
 namespace MovieCRUD.Infrastructure
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : DbContext, IDisposable
     {
         public DbSet<MovieEntity> Movies { get; set; }
 
