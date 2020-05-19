@@ -10,6 +10,6 @@ namespace MovieCRUD.Infrastructure.Persistence.Interfaces
         Task<User> GetUserByExternalLoginInfoAsync(ExternalLogin loginInfo);
         Task<IList<Claim>> GetClaimsAsync(int userId);
         Task<IList<ExternalLogin>> GetLoginsAsync(int userId);
-        Task GetPasswordHashAsync(int userId);
+        Task<string> GetPasswordHashAsync(int userId);
     }
 }

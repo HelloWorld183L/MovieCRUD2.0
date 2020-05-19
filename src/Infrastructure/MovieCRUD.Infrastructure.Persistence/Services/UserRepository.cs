@@ -12,17 +12,17 @@ namespace MovieCRUD.Infrastructure.Persistence.Services
     {
         public UserRepository(ApplicationDbContext context, IMapper mapper, ILogger logger) : base(context, mapper, logger) { }
 
-        public Task<IList<Claim>> GetClaimsAsync(int userId)
+        public async Task<IList<Claim>> GetClaimsAsync(int userId)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<IList<ExternalLogin>> GetLoginsAsync(int userId)
+        public async Task<IList<ExternalLogin>> GetLoginsAsync(int userId)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task GetPasswordHashAsync(int userId)
+        public async Task<string> GetPasswordHashAsync(int userId)
         {
             throw new System.NotImplementedException();
         }
