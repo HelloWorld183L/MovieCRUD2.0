@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using MovieCRUD.Desktop.Configuration;
 using MovieCRUD.Desktop.Models;
-using MovieCRUD.Infrastructure.InversionOfControl.Installers.Interfaces;
+using MovieCRUD.SharedKernel;
 using Stylet;
 using System.Collections.Generic;
 using System.Reflection;
