@@ -25,10 +25,10 @@ namespace MovieCRUD.Authentication.Controllers
     {
         public ISecureDataFormat<AuthenticationTicket> AccessTokenFormat { get; private set; }
         private const string LocalLoginProvider = "Local";
-        private UserManager<UserDTO, int> _userManager;
+        private ApplicationUserManager _userManager;
         private IMapper _mapper;
 
-        public AccountController(UserManager<UserDTO, int> userManager, IMapper mapper)
+        public AccountController(ApplicationUserManager userManager, IMapper mapper)
         {
             _userManager = userManager;
             _mapper = mapper;
