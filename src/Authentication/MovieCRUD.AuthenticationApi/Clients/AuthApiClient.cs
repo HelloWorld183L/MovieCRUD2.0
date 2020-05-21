@@ -169,14 +169,11 @@ namespace MovieCRUD.Authentication.Clients
             var requestBody = $"grant_type=password&username={accessTokenRequest.Username}&password={accessTokenRequest.Password}";
 
             var requestContent = new StringContent(requestBody, Encoding.UTF8, "x-www-form-urlencoded");
-
             var response = await _restClient.PostAsync(AccountRoutes.RequestToken, requestContent);
             response.EnsureSuccessStatusCode();
 
             var responseText = await response.Content.ReadAsStringAsync();
-
             var requestTokenResponse = JsonConvert.DeserializeObject<RequestTokenResponse>(responseText);
-
             return requestTokenResponse;
         }
              

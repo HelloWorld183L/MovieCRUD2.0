@@ -16,8 +16,6 @@ using MovieCRUD.Authentication.Responses;
 using MovieCRUD.Authentication.Results;
 using MovieCRUD.Authentication.V1;
 using MovieCRUD.Authentication.ViewModels;
-using MovieCRUD.Domain.Authentication;
-using MovieCRUD.Infrastructure.Persistence.Interfaces;
 
 namespace MovieCRUD.Authentication.Controllers
 {
@@ -102,7 +100,6 @@ namespace MovieCRUD.Authentication.Controllers
                 GetUserId(),
                 changePasswordModel.OldPassword,
                 changePasswordModel.NewPassword);
-            
             if (!changePasswordResult.Succeeded) return GetErrorResult(changePasswordResult);
 
             return Ok();
@@ -114,7 +111,6 @@ namespace MovieCRUD.Authentication.Controllers
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
             var setPasswordResult = await _userManager.AddPasswordAsync(GetUserId(), passwordRequest.NewPassword);
-
             if (!setPasswordResult.Succeeded) return GetErrorResult(setPasswordResult);
 
             return Ok();
@@ -242,9 +238,7 @@ namespace MovieCRUD.Authentication.Controllers
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
             var user = _mapper.Map<UserDTO>(registerRequest);
-
             var registerUserResult = await _userManager.CreateAsync(user, registerRequest.Password);
-
             if (!registerUserResult.Succeeded) return GetErrorResult(registerUserResult);
 
             return Ok();

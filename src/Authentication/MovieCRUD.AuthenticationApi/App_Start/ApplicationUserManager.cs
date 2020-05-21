@@ -28,7 +28,8 @@ namespace MovieCRUD.Authentication
             var dataProtectionProvider = identityFactoryOptions.DataProtectionProvider;
             if (dataProtectionProvider != null)
             {
-                userManager.UserTokenProvider = new DataProtectorTokenProvider<UserDTO, int>(dataProtectionProvider.Create("ASP.NET Identity"));
+                var dataProtector = dataProtectionProvider.Create("ASP.NET Identity");
+                userManager.UserTokenProvider = new DataProtectorTokenProvider<UserDTO, int>(dataProtector);
             }
             return userManager;
         }
