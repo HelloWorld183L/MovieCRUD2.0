@@ -64,7 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\Rating.cs" />
-    <Compile Include="Extensions\InstallerExtensions.cs" />
+    <Compile Include="Extensions\ServiceCollectionExtensions.cs" />
     <Compile Include="Interfaces\IAggregate.cs" />
     <Compile Include="Interfaces\IEntity.cs" />
     <Compile Include="Interfaces\IInstaller.cs" />
