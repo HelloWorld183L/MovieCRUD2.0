@@ -127,6 +127,7 @@
     </ApplicationDefinition>
     <Compile Include="Configuration\IoCBootstrapper.cs" />
     <Compile Include="Configuration\Bootstrapper.cs" />
+    <Compile Include="Configuration\StyletInstaller.cs" />
     <Compile Include="MappingProfiles\DTORequestProfile.cs" />
     <Compile Include="MappingProfiles\DTOResponseProfile.cs" />
     <Compile Include="Models\Commands\Command.cs" />
