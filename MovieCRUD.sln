@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.Web", "src\Client
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.Desktop", "src\Clients\MovieCRUD.Desktop\MovieCRUD.Desktop.csproj", "{FDF3554F-B877-46E7-A8F3-F18656A6199A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.Movies", "src\Movies\MovieCRUD.Movies\MovieCRUD.Movies.csproj", "{08DAC1F4-AF18-4B8A-8CB3-303966E397E2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.MovieApi", "src\Movies\MovieCRUD.MovieApi\MovieCRUD.MovieApi.csproj", "{08DAC1F4-AF18-4B8A-8CB3-303966E397E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.Authentication", "src\Authentication\MovieCRUD.Authentication\MovieCRUD.Authentication.csproj", "{09CF7AE7-E54C-4F7A-982E-B36DD66F5A4C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCRUD.AuthenticationApi", "src\Authentication\MovieCRUD.AuthenticationApi\MovieCRUD.AuthenticationApi.csproj", "{09CF7AE7-E54C-4F7A-982E-B36DD66F5A4C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0BB09F2D-0E09-410C-8403-3C0E970AA0AA}"
 EndProject

@@ -22,7 +22,7 @@
     <ProjectReference Include="..\..\..\src\Clients\MovieCRUD.Desktop\MovieCRUD.Desktop.csproj" />
     <ProjectReference Include="..\..\..\src\Infrastructure\MovieCRUD.Infrastructure.Logging\MovieCRUD.Infrastructure.Logging.csproj" />
     <ProjectReference Include="..\..\..\src\MovieCRUD.SharedKernel\MovieCRUD.SharedKernel.csproj" />
-    <ProjectReference Include="..\..\..\src\Movies\MovieCRUD.Movies\MovieCRUD.Movies.csproj" />
+    <ProjectReference Include="..\..\..\src\Movies\MovieCRUD.Movies\MovieCRUD.MovieApi.csproj" />
   </ItemGroup>
 
 </Project>

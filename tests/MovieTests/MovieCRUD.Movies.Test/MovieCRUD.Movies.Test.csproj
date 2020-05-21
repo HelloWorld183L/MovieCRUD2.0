@@ -82,9 +82,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\Movies\MovieCRUD.Movies\MovieCRUD.Movies.csproj">
+    <ProjectReference Include="..\..\..\src\Movies\MovieCRUD.MovieApi\MovieCRUD.MovieApi.csproj">
       <Project>{08DAC1F4-AF18-4B8A-8CB3-303966E397E2}</Project>
-      <Name>MovieCRUD.Movies</Name>
+      <Name>MovieCRUD.MovieApi</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\src\Movies\MovieCRUD.Domain.Movies\MovieCRUD.Domain.Movies.csproj">
       <Project>{231DF889-FC75-4E8E-9988-F2BDABE7FB0A}</Project>

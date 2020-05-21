@@ -123,6 +123,7 @@
     <Compile Include="Installers\MovieInstaller.cs" />
     <Compile Include="Installers\InfrastructureInstaller.cs" />
     <Compile Include="Installers\StyletInstaller.cs" />
+    <Compile Include="IoCAssembly.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -130,13 +131,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Movies\MovieCRUD.Movies\MovieCRUD.Movies.csproj">
+    <ProjectReference Include="..\..\Movies\MovieCRUD.MovieApi\MovieCRUD.MovieApi.csproj">
       <Project>{08DAC1F4-AF18-4B8A-8CB3-303966E397E2}</Project>
-      <Name>MovieCRUD.Movies</Name>
+      <Name>MovieCRUD.MovieApi</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Authentication\MovieCRUD.Authentication\MovieCRUD.Authentication.csproj">
+    <ProjectReference Include="..\..\Authentication\MovieCRUD.AuthenticationApi\MovieCRUD.AuthenticationApi.csproj">
       <Project>{09cf7ae7-e54c-4f7a-982e-b36dd66f5a4c}</Project>
-      <Name>MovieCRUD.Authentication</Name>
+      <Name>MovieCRUD.AuthenticationApi</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Clients\MovieCRUD.Desktop\MovieCRUD.Desktop.csproj">
       <Project>{FDF3554F-B877-46E7-A8F3-F18656A6199A}</Project>

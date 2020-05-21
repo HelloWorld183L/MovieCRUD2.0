@@ -224,9 +224,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Movies\MovieCRUD.Movies\MovieCRUD.Movies.csproj">
+    <ProjectReference Include="..\..\Movies\MovieCRUD.MovieApi\MovieCRUD.MovieApi.csproj">
       <Project>{08dac1f4-af18-4b8a-8cb3-303966e397e2}</Project>
-      <Name>MovieCRUD.Movies</Name>
+      <Name>MovieCRUD.MovieApi</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Infrastructure\MovieCRUD.Infrastructure.Logging\MovieCRUD.Infrastructure.Logging.csproj">
       <Project>{6BAE797A-E601-496D-A840-11CA37D57231}</Project>
