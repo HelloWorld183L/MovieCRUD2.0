@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using MovieCRUD.Infrastructure.InversionOfControl.Installers.Interfaces;
+﻿using MovieCRUD.Infrastructure.InversionOfControl.Installers.Interfaces;
 using System;
 using System.Linq;
 
