@@ -58,14 +58,6 @@
       <HintPath>..\..\..\packages\AutoMapper.Extensions.Microsoft.DependencyInjection.7.0.0\lib\netstandard2.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
       <Private>True</Private>
@@ -235,11 +227,6 @@
     </Compile>
     <Compile Include="MappingProfiles\DTORequestProfile.cs" />
     <Compile Include="MappingProfiles\DTOResponseProfile.cs" />
-    <Compile Include="Migrations\201911281729339_EstablishDatabase.cs" />
-    <Compile Include="Migrations\201911281729339_EstablishDatabase.Designer.cs">
-      <DependentUpon>201911281729339_EstablishDatabase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\ChallengeResult.cs" />
     <Compile Include="ViewModels\Account ViewModels\ExternalLoginConfirmationViewModel.cs" />
@@ -338,13 +325,13 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Movies\MovieCRUD.Movies\MovieCRUD.Movies.csproj">
+    <ProjectReference Include="..\..\Movies\MovieCRUD.MovieApi\MovieCRUD.MovieApi.csproj">
       <Project>{08DAC1F4-AF18-4B8A-8CB3-303966E397E2}</Project>
-      <Name>MovieCRUD.Movies</Name>
+      <Name>MovieCRUD.MovieApi</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Authentication\MovieCRUD.Authentication\MovieCRUD.Authentication.csproj">
+    <ProjectReference Include="..\..\Authentication\MovieCRUD.AuthenticationApi\MovieCRUD.AuthenticationApi.csproj">
       <Project>{09CF7AE7-E54C-4F7A-982E-B36DD66F5A4C}</Project>
-      <Name>MovieCRUD.Authentication</Name>
+      <Name>MovieCRUD.AuthenticationApi</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Authentication\MovieCRUD.Domain.Authentication\MovieCRUD.Domain.Authentication.csproj">
       <Project>{B6DAE6FF-2909-4940-AAD8-F659CCD3CF77}</Project>
@@ -362,11 +349,6 @@
       <Project>{e7651bdf-f497-4528-ae0e-929325528ac0}</Project>
       <Name>MovieCRUD.SharedKernel</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201911281729339_EstablishDatabase.resx">
-      <DependentUpon>201911281729339_EstablishDatabase.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
