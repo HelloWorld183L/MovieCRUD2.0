@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
+using MovieCRUD.SharedKernel;
 using Stylet;
 using System;
 using System.Collections.Generic;
@@ -34,8 +35,7 @@ namespace MovieCRUD.Desktop.Configuration
         protected virtual void ConfigureIoC(IServiceCollection services) 
         {
             var executingAssembly = Assembly.GetExecutingAssembly();
-
-            services.InstallTypesInAssembly(executingAssembly);
+            services.InstallTypesInAssembly();
             services.AddAutoMapper(executingAssembly);
         }
 

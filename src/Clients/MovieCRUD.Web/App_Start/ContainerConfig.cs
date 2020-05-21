@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
-using MovieCRUD.Web;
+using MovieCRUD.SharedKernel;
 using System.Reflection;
 
 namespace MovieCRUD.App_Start
@@ -12,8 +12,8 @@ namespace MovieCRUD.App_Start
             IServiceCollection services = new ServiceCollection();
 
             var executingAssembly = Assembly.GetExecutingAssembly();
-            services.InstallTypesInAssembly(executingAssembly);
-            services.AddAutoMapper(typeof(ContainerConfig).Assembly);
+            services.InstallTypesInAssembly();
+            services.AddAutoMapper(executingAssembly);
         }
     }
 }
