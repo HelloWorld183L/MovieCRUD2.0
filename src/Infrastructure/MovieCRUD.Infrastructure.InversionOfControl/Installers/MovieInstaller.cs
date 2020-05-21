@@ -1,5 +1,4 @@
-﻿using Autofac;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using MovieCRUD.Infrastructure.InversionOfControl.Installers.Interfaces;
 using MovieCRUD.Infrastructure.Logging;
 using MovieCRUD.Infrastructure.Persistence.Interfaces;

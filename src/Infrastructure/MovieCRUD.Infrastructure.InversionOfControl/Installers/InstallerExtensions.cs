@@ -1,5 +1,4 @@
-﻿using Autofac;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using MovieCRUD.Infrastructure.InversionOfControl.Installers.Interfaces;
 using System;
 using System.Linq;

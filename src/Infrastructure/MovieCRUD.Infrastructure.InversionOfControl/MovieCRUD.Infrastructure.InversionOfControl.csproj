@@ -117,7 +117,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContainerConfig.cs" />
     <Compile Include="Installers\AuthInstaller.cs" />
     <Compile Include="Installers\InstallerExtensions.cs" />
     <Compile Include="Installers\Interfaces\IInstaller.cs" />

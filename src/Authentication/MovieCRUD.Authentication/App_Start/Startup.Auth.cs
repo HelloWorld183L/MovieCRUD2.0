@@ -5,7 +5,6 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
 using MovieCRUD.Authentication.Providers;
-using MovieCRUD.Infrastructure;
 using MovieCRUD.Authentication.V1;
 
 namespace MovieCRUD.Authentication
@@ -18,7 +17,6 @@ namespace MovieCRUD.Authentication
         // For more information on configuring authentication, please visit https://go.microsoft.com/fwlink/?LinkId=301864
         public void ConfigureAuth(IAppBuilder appBuilder)
         {
-            appBuilder.CreatePerOwinContext(() => new ApplicationDbContext());
             appBuilder.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
 
             appBuilder.UseCookieAuthentication(new CookieAuthenticationOptions());
