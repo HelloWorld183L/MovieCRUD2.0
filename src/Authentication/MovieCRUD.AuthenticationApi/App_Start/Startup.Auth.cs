@@ -6,6 +6,8 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using MovieCRUD.Authentication.Providers;
 using MovieCRUD.Authentication.V1;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security.DataProtection;
 
 namespace MovieCRUD.Authentication
 {
@@ -17,16 +19,16 @@ namespace MovieCRUD.Authentication
         // For more information on configuring authentication, please visit https://go.microsoft.com/fwlink/?LinkId=301864
         public void ConfigureAuth(IAppBuilder appBuilder)
         {
-            appBuilder.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
-
             appBuilder.UseCookieAuthentication(new CookieAuthenticationOptions());
             appBuilder.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
             PublicClientId = "self";
+
+            var dataProtectionProvider = new DpapiDataProtectionProvider();
             OAuthOptions = new OAuthAuthorizationServerOptions
             {
                 TokenEndpointPath = new PathString(AccountRoutes.RequestToken),
-                Provider = new ApplicationOAuthProvider(),
+                Provider = new ApplicationOAuthProvider(ApplicationUserManager.Create(dataProtectionProvider)),
                 AuthorizeEndpointPath = new PathString(AccountRoutes.AuthorizeEndPoint),
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(14),
                 AllowInsecureHttp = true
