@@ -2,6 +2,8 @@
 using Microsoft.Extensions.DependencyInjection;
 using MovieCRUD.SharedKernel;
 using System.Reflection;
+using System.Web.Http;
+using System.Web.Mvc;
 
 namespace MovieCRUD.App_Start
 {
@@ -13,7 +15,10 @@ namespace MovieCRUD.App_Start
 
             var executingAssembly = Assembly.GetExecutingAssembly();
             services.InstallTypesInAssembly();
-            services.AddAutoMapper(executingAssembly);
+            services.InstallGeneralTypes(executingAssembly);
+
+            var dependencyResolver = new MvcDependencyResolver(services.BuildServiceProvider());
+            DependencyResolver.SetResolver(dependencyResolver);
         }
     }
 }

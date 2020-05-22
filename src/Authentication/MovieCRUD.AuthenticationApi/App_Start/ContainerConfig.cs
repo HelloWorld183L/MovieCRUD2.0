@@ -1,7 +1,7 @@
-﻿using AutoMapper;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using MovieCRUD.SharedKernel;
 using System.Reflection;
+using System.Web.Http;
 
 namespace MovieCRUD.Authentication.App_Start
 {
@@ -10,9 +10,11 @@ namespace MovieCRUD.Authentication.App_Start
         public static void RegisterContainer()
         {
             IServiceCollection services = new ServiceCollection();
-            var executingAssembly = Assembly.GetExecutingAssembly();
             services.InstallTypesInAssembly();
-            services.AddAutoMapper(executingAssembly);
+            services.InstallGeneralTypes(Assembly.GetExecutingAssembly());
+
+            var dependencyResolver = new WebApiDependencyResolver(services.BuildServiceProvider());
+            GlobalConfiguration.Configuration.DependencyResolver = dependencyResolver;
         }
     }
 }
