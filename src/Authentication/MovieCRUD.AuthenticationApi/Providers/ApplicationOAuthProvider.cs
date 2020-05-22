@@ -11,25 +11,25 @@ namespace MovieCRUD.Authentication.Providers
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {
         private readonly string _publicClientId;
+        private ApplicationUserManager _userManager;
 
-        public ApplicationOAuthProvider()
+        public ApplicationOAuthProvider(ApplicationUserManager userManager)
         {
             _publicClientId = Startup.PublicClientId;
+            _userManager = userManager;
         }
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
-            var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
-
-            var user = await userManager.FindAsync(context.UserName, context.Password);
+            var user = await _userManager.FindAsync(context.UserName, context.Password);
             if (user == null)
             {
                 context.SetError("invalid_grant", "The user name or password is incorrect.");
                 return;
             }
 
-            var oAuthIdentity = await user.GenerateUserIdentityAsync(userManager, OAuthDefaults.AuthenticationType);
-            var cookiesIdentity = await user.GenerateUserIdentityAsync(userManager, CookieAuthenticationDefaults.AuthenticationType);
+            var oAuthIdentity = await user.GenerateUserIdentityAsync(_userManager, OAuthDefaults.AuthenticationType);
+            var cookiesIdentity = await user.GenerateUserIdentityAsync(_userManager, CookieAuthenticationDefaults.AuthenticationType);
 
             var properties = CreateProperties(user.UserName);
             var authTicket = new AuthenticationTicket(oAuthIdentity, properties);
