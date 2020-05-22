@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using MovieCRUD.SharedKernel;
 using Stylet;
 using System;
@@ -36,7 +35,7 @@ namespace MovieCRUD.Desktop.Configuration
         {
             var executingAssembly = Assembly.GetExecutingAssembly();
             services.InstallTypesInAssembly();
-            services.AddAutoMapper(executingAssembly);
+            services.InstallGeneralTypes(executingAssembly);
         }
 
         public override object GetInstance(Type serviceType) => serviceProvider.GetService(serviceType);

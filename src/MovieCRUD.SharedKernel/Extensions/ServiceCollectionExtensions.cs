@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using AutoMapper;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Linq;
 using System.Reflection;
@@ -18,7 +19,13 @@ namespace MovieCRUD.SharedKernel
                 .Cast<IInstaller>()
                 .ToList();
 
-            installers.ForEach(installer => installer.InstallTypes(services));
+            var orderedInstallers = installers.OrderBy(installer => installer.InstallOrder).ToList();
+            orderedInstallers.ForEach(installer => installer.InstallTypes(services));
+        }
+
+        public static void InstallGeneralTypes(this IServiceCollection services, Assembly profileAssembly)
+        {
+            services.AddAutoMapper(profileAssembly);
         }
     }
 }
