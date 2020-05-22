@@ -2,6 +2,7 @@
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
+using Microsoft.Owin.Security.DataProtection;
 using MovieCRUD.Authentication.Models.IdentityModels;
 using MovieCRUD.Authentication.Stores;
 using MovieCRUD.Infrastructure.Persistence.Interfaces;
@@ -19,13 +20,12 @@ namespace MovieCRUD.Authentication
             _userRepo = userRepository;
         }
 
-        public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> identityFactoryOptions, IOwinContext context)
+        public static ApplicationUserManager Create(IDataProtectionProvider dataProtectionProvider)
         {
             var userStore = new UserStore(_userRepo, _mapper);
             var userManager = new ApplicationUserManager(userStore, _mapper, _userRepo);
             ConfigureValidation(userManager);
 
-            var dataProtectionProvider = identityFactoryOptions.DataProtectionProvider;
             if (dataProtectionProvider != null)
             {
                 var dataProtector = dataProtectionProvider.Create("ASP.NET Identity");
