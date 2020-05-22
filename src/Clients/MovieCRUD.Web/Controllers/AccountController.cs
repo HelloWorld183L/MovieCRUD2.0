@@ -1,13 +1,9 @@
-﻿using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
+﻿using Microsoft.AspNet.Identity.Owin;
 using MovieCRUD.Web.ViewModels;
 using MovieCRUD.Web;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using AutoMapper;
-using System.Web.Services.Description;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using MovieCRUD.Authentication.Clients;
@@ -15,7 +11,6 @@ using MovieCRUD.Authentication.Requests;
 using MovieCRUD.Authentication.Responses;
 using MovieCRUD.Authentication.V1.Requests;
 using MovieCRUD.Authentication.Notifications.Messages;
-using MovieCRUD.Authentication.Models.IdentityModels;
 
 namespace MovieCRUD.Controllers
 {
@@ -27,8 +22,6 @@ namespace MovieCRUD.Controllers
         private IAuthApiClient _apiClient;
         private RequestTokenResponse _accessToken;
         private IMapper _mapper;
-
-        public AccountController() { }
 
         public AccountController(IAuthApiClient apiClient, IMapper mapper)
         {
